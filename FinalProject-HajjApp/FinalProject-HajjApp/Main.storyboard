@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="m3O-9V-UjT">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Hajj Login View Controller-->
+        <scene sceneID="bAU-3W-mYz">
+            <objects>
+                <viewController storyboardIdentifier="loginVC" id="m3O-9V-UjT" customClass="HajjLoginViewController" customModule="FinalProject_HajjApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ZES-HM-01h">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="HajjApp-Login-Background" translatesAutoresizingMaskIntoConstraints="NO" id="oLn-zE-mD7">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </imageView>
+                            <view alpha="0.89999997615814209" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5xt-Cj-IaV" customClass="DesignableView" customModule="FinalProject_HajjApp" customModuleProvider="target">
+                                <rect key="frame" x="50" y="459" width="314" height="70"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lock" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="E3t-38-NPu">
+                                        <rect key="frame" x="15" y="10.5" width="30" height="48.5"/>
+                                        <color key="tintColor" red="0.47450980390000003" green="0.63921568630000003" blue="0.59215686270000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="30" id="iOe-tN-d3F"/>
+                                        </constraints>
+                                    </imageView>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="1234@haj" placeholder="   ********" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="opD-Ce-uyG">
+                                        <rect key="frame" x="60" y="10" width="244" height="50"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES" secureTextEntry="YES" textContentType="username"/>
+                                    </textField>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="70" id="0e3-bG-6Bf"/>
+                                    <constraint firstItem="opD-Ce-uyG" firstAttribute="top" secondItem="5xt-Cj-IaV" secondAttribute="top" constant="10" id="BEi-XC-l4m"/>
+                                    <constraint firstItem="opD-Ce-uyG" firstAttribute="leading" secondItem="E3t-38-NPu" secondAttribute="trailing" constant="15" id="Fn1-Bs-3Qc"/>
+                                    <constraint firstAttribute="bottom" secondItem="E3t-38-NPu" secondAttribute="bottom" constant="10" id="MPg-Sd-fM6"/>
+                                    <constraint firstAttribute="bottom" secondItem="opD-Ce-uyG" secondAttribute="bottom" constant="10" id="PnR-FC-hgC"/>
+                                    <constraint firstAttribute="width" constant="300" id="W4m-pC-Ns9"/>
+                                    <constraint firstItem="E3t-38-NPu" firstAttribute="top" secondItem="5xt-Cj-IaV" secondAttribute="top" constant="10" id="l5g-1d-CTi"/>
+                                    <constraint firstAttribute="trailing" secondItem="opD-Ce-uyG" secondAttribute="trailing" constant="10" id="mBm-uf-HeM"/>
+                                    <constraint firstItem="E3t-38-NPu" firstAttribute="leading" secondItem="5xt-Cj-IaV" secondAttribute="leading" constant="15" id="rap-ej-tNl"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="25"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                        <real key="value" value="0.29999999999999999"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
+                                        <size key="value" width="1" height="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                        <color key="value" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <view alpha="0.89999997615814209" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QUw-W5-L4X" customClass="DesignableView" customModule="FinalProject_HajjApp" customModuleProvider="target">
+                                <rect key="frame" x="50" y="359" width="314" height="70"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="7Ag-vc-D0N">
+                                        <rect key="frame" x="15" y="11.5" width="30" height="47.5"/>
+                                        <color key="tintColor" red="0.47450980390000003" green="0.63921568630000003" blue="0.59215686270000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="30" id="56n-Rh-YtJ"/>
+                                        </constraints>
+                                    </imageView>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text=" h42-c1-001@haj.com " placeholder="  permit#@domain.com" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ehZ-oI-k4F">
+                                        <rect key="frame" x="60" y="10" width="244" height="50"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES" textContentType="username"/>
+                                    </textField>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="ehZ-oI-k4F" firstAttribute="top" secondItem="QUw-W5-L4X" secondAttribute="top" constant="10" id="AmS-8l-LvI"/>
+                                    <constraint firstAttribute="trailing" secondItem="ehZ-oI-k4F" secondAttribute="trailing" constant="10" id="AoK-zl-cuU"/>
+                                    <constraint firstAttribute="width" constant="300" id="Fxw-PD-Upi"/>
+                                    <constraint firstItem="ehZ-oI-k4F" firstAttribute="leading" secondItem="7Ag-vc-D0N" secondAttribute="trailing" constant="15" id="PXz-5t-YEL"/>
+                                    <constraint firstAttribute="bottom" secondItem="7Ag-vc-D0N" secondAttribute="bottom" constant="10" id="aaT-Bf-evT"/>
+                                    <constraint firstAttribute="height" constant="70" id="f81-ud-Zr5"/>
+                                    <constraint firstItem="7Ag-vc-D0N" firstAttribute="top" secondItem="QUw-W5-L4X" secondAttribute="top" constant="10" id="kSl-Md-7HW"/>
+                                    <constraint firstItem="7Ag-vc-D0N" firstAttribute="leading" secondItem="QUw-W5-L4X" secondAttribute="leading" constant="15" id="ncg-Ji-ys9"/>
+                                    <constraint firstAttribute="bottom" secondItem="ehZ-oI-k4F" secondAttribute="bottom" constant="10" id="rwG-w1-O2e"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="25"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                        <real key="value" value="0.29999999999999999"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
+                                        <size key="value" width="1" height="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                        <color key="value" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person.crop.circle.badge.checkmark" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="jox-eV-vFi" customClass="DesignableImage" customModule="FinalProject_HajjApp" customModuleProvider="target">
+                                <rect key="frame" x="155.5" y="148" width="101.5" height="99.5"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="Cmr-4N-qco"/>
+                                    <constraint firstAttribute="width" constant="100" id="O1m-yP-wiL"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                        <real key="value" value="3"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                        <real key="value" value="0.29999999999999999"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
+                                        <size key="value" width="1" height="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                        <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome to &quot;App Name&quot;" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mHS-Ys-HvH">
+                                <rect key="frame" x="82" y="273" width="250" height="26"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="250" id="Asu-5G-7J2"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="21"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                                <size key="shadowOffset" width="0.5" height="0.5"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iyC-Ll-bdT" customClass="DesignableButton" customModule="FinalProject_HajjApp" customModuleProvider="target">
+                                <rect key="frame" x="87" y="603" width="240" height="50"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="P6W-iz-7cb"/>
+                                    <constraint firstAttribute="height" constant="50" id="pJG-Sk-ZpO"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                <state key="normal" title="Login">
+                                    <color key="titleColor" red="0.33229398729999998" green="0.48755019900000002" blue="0.44280302519999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="25"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                        <real key="value" value="3"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                        <real key="value" value="0.29999999999999999"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
+                                        <size key="value" width="1" height="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="loginButtonTapped:" destination="m3O-9V-UjT" eventType="touchUpInside" id="hFp-WB-TNS"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SJM-bg-jSU">
+                                <rect key="frame" x="87" y="733" width="240" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="57f-c5-QvJ"/>
+                                    <constraint firstAttribute="height" constant="30" id="kz6-3G-uTW"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                <color key="tintColor" red="0.47450980390000003" green="0.63921568630000003" blue="0.59215686270000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="  Hajj Crew? Login here" image="person.3.fill" catalog="system">
+                                    <color key="titleColor" red="0.47450980390000003" green="0.63921568630000003" blue="0.59215686270000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="GzB-Q7-SH0" kind="presentation" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="EDx-hd-qn1"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="khF-hi-S2Q"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="5xt-Cj-IaV" firstAttribute="leading" secondItem="khF-hi-S2Q" secondAttribute="leading" constant="50" id="0e8-Ka-7qA"/>
+                            <constraint firstItem="khF-hi-S2Q" firstAttribute="trailing" secondItem="QUw-W5-L4X" secondAttribute="trailing" constant="50" id="6mi-ce-5qI"/>
+                            <constraint firstItem="SJM-bg-jSU" firstAttribute="centerX" secondItem="ZES-HM-01h" secondAttribute="centerX" id="C3H-qv-fc8"/>
+                            <constraint firstItem="oLn-zE-mD7" firstAttribute="top" secondItem="ZES-HM-01h" secondAttribute="top" id="DDC-kB-vkh"/>
+                            <constraint firstItem="iyC-Ll-bdT" firstAttribute="centerX" secondItem="ZES-HM-01h" secondAttribute="centerX" id="G8d-9W-0jm"/>
+                            <constraint firstItem="SJM-bg-jSU" firstAttribute="centerY" secondItem="ZES-HM-01h" secondAttribute="centerY" constant="300" id="HfJ-v0-aJF"/>
+                            <constraint firstItem="QUw-W5-L4X" firstAttribute="leading" secondItem="khF-hi-S2Q" secondAttribute="leading" constant="50" id="K3d-ZR-BN3"/>
+                            <constraint firstItem="iyC-Ll-bdT" firstAttribute="centerY" secondItem="ZES-HM-01h" secondAttribute="centerY" constant="180" id="Qhz-Tz-WWK"/>
+                            <constraint firstItem="jox-eV-vFi" firstAttribute="centerX" secondItem="ZES-HM-01h" secondAttribute="centerX" id="UOY-PP-Da0"/>
+                            <constraint firstItem="jox-eV-vFi" firstAttribute="centerY" secondItem="ZES-HM-01h" secondAttribute="centerY" constant="-250" id="V6Y-Qt-ooc"/>
+                            <constraint firstItem="mHS-Ys-HvH" firstAttribute="top" secondItem="jox-eV-vFi" secondAttribute="bottom" constant="25" id="WGj-sy-emh"/>
+                            <constraint firstItem="mHS-Ys-HvH" firstAttribute="centerX" secondItem="ZES-HM-01h" secondAttribute="centerX" id="ebM-zP-66q"/>
+                            <constraint firstAttribute="trailing" secondItem="oLn-zE-mD7" secondAttribute="trailing" id="gj4-vc-bXj"/>
+                            <constraint firstItem="5xt-Cj-IaV" firstAttribute="top" secondItem="QUw-W5-L4X" secondAttribute="bottom" constant="30" id="jPV-uH-mGG"/>
+                            <constraint firstItem="5xt-Cj-IaV" firstAttribute="top" secondItem="QUw-W5-L4X" secondAttribute="bottom" constant="30" id="l2S-Se-IOY"/>
+                            <constraint firstItem="khF-hi-S2Q" firstAttribute="trailing" secondItem="5xt-Cj-IaV" secondAttribute="trailing" constant="50" id="pxJ-xT-YYA"/>
+                            <constraint firstItem="oLn-zE-mD7" firstAttribute="leading" secondItem="ZES-HM-01h" secondAttribute="leading" id="qnp-37-e5Q"/>
+                            <constraint firstItem="QUw-W5-L4X" firstAttribute="top" secondItem="mHS-Ys-HvH" secondAttribute="bottom" constant="60" id="rnJ-KO-Z1R"/>
+                            <constraint firstAttribute="bottom" secondItem="oLn-zE-mD7" secondAttribute="bottom" id="xJp-a8-Qfi"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="emailTextField" destination="ehZ-oI-k4F" id="aNm-Cr-luq"/>
+                        <outlet property="passwordTextField" destination="opD-Ce-uyG" id="mLD-ge-z0C"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="omU-7V-xgL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5.7971014492753632" y="36.830357142857139"/>
+        </scene>
+        <!--CrewAuthentication-->
+        <scene sceneID="A4d-Nk-8Ys">
+            <objects>
+                <viewControllerPlaceholder storyboardName="CrewAuthentication" id="GzB-Q7-SH0" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="bNQ-1S-99Q"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gqV-XN-a0r" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="676" y="37"/>
+        </scene>
+    </scenes>
+    <designables>
+        <designable name="iyC-Ll-bdT">
+            <size key="intrinsicContentSize" width="48" height="34"/>
+        </designable>
+        <designable name="jox-eV-vFi">
+            <size key="intrinsicContentSize" width="20.5" height="20"/>
+        </designable>
+    </designables>
+    <resources>
+        <image name="HajjApp-Login-Background" width="375" height="812"/>
+        <image name="lock" catalog="system" width="128" height="128"/>
+        <image name="person" catalog="system" width="128" height="117"/>
+        <image name="person.3.fill" catalog="system" width="128" height="61"/>
+        <image name="person.crop.circle.badge.checkmark" catalog="system" width="128" height="113"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
