@@ -15,37 +15,51 @@ class TrackingHajjiesOnMapViewController: UIViewController, MKMapViewDelegate {
     @IBOutlet var searchBar: UISearchBar!
     @IBOutlet var mapView: MKMapView!
     
+    var locationManager: CLLocationManager!
+    static var latitude =  CLLocationDegrees()
+    static var longitude =  CLLocationDegrees()
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
+//        locationManager = CLLocationManager()
+//        locationManager.requestAlwaysAuthorization()
+//        locationManager.delegate = self
+
         mapView.delegate = self
+        
+//        if CLLocationManager.locationServicesEnabled() {
+//            locationManager.startUpdatingLocation()
+//        }
     }
 
     
     func searchFor(text: String) {
+        
         //"H42-C1-001"
-
         FirebaseConstants.users.whereField("permitNumber", isEqualTo: text)
             .getDocuments() { (querySnapshot, err) in
                 if let err = err {
                     print("Error getting documents: \(err)")
+                    
                 } else {
                     for document in querySnapshot!.documents {
                         print("hhhh \(document.documentID) => \(document.data())")
 //                        print(document.data().index(forKey: "currentLocation"))
-                        let getcurrentLocation = document["currentLocation"] as! GeoPoint
-                        print(getcurrentLocation.latitude)
-                        print(getcurrentLocation.longitude)
+                        let getCurrentLocation = document["currentLocation"] as! GeoPoint
+                        let getName = document["fullName"] as! String
+                        print(getCurrentLocation.latitude)
+                        print(getCurrentLocation.longitude)
                         
                         //getting current location
-                        let location = CLLocationCoordinate2DMake(getcurrentLocation.latitude, getcurrentLocation.longitude)
+                        let location = CLLocationCoordinate2DMake(getCurrentLocation.latitude, getCurrentLocation.longitude)
                         print("hajj's location: \(location)")
                         let region = MKCoordinateRegion(center: location, latitudinalMeters: 500.0, longitudinalMeters: 700.0)
                         self.mapView.setRegion(region, animated: true)
                         // Drop a pin
                         let dropPin = MKPointAnnotation()
                         dropPin.coordinate = location
-                        dropPin.title = "موقع الحاج -رقم تصريح كذت-"
+                        dropPin.title = getName
                         self.mapView.addAnnotation(dropPin)
                         
                     }
@@ -110,3 +124,4 @@ extension TrackingHajjiesOnMapViewController: UISearchBarDelegate {
         searchBar.resignFirstResponder()
     }
 }
+
