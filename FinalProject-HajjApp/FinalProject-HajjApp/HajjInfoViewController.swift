@@ -60,21 +60,15 @@ class HajjInfoViewController: UIViewController {
         
         additionalInfoView.roundCorners(corners: [.topLeft,.topRight], radius: 30)
         campaignView.roundCorners(corners: [.topLeft,.topRight], radius: 30)
+   
         fetchUserName()
         
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(HajjInfoViewController.imageTapped(gesture:)))
         
-
-        // add it to the image view;
         barcodeView.addGestureRecognizer(tapGesture)
-        // make sure imageView can be interacted with by user
         barcodeView.isUserInteractionEnabled = true
         
-//        FirebaseConstants.picStorageRef.downloadURL(completion: { (url, error) in
-//        print("Image URL: \((url?.absoluteString)!)")
-//
-////        self.writeDatabaseCustomer(imageUrl: (url?.absoluteString)!)
-//        })
+
     }
     
     
