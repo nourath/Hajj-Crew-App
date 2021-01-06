@@ -109,9 +109,6 @@ func captureQRCode() {
             let stringValue = readableObject.stringValue {
             
             AudioServicesPlaySystemSound(SystemSoundID(kSystemSoundID_Vibrate))
-//            self.dismiss(animated: true, completion: {
-//                self.delegate?.didScanQR(stringValue)
-//            })
             CrewQRCodeScannerViewController.uidFromQRCode = stringValue
 
             let storyboard = UIStoryboard(name: "CrewTabBar", bundle: nil)
