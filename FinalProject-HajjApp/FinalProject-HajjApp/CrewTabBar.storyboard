@@ -562,6 +562,20 @@
                                     <constraint firstAttribute="bottom" secondItem="biY-fY-HDk" secondAttribute="bottom" constant="15" id="n2s-sK-raJ"/>
                                 </constraints>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZAx-Hj-Ivg">
+                                <rect key="frame" x="20" y="54.5" width="45" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="IwY-AR-xos"/>
+                                    <constraint firstAttribute="width" constant="45" id="cDb-v6-ry6"/>
+                                </constraints>
+                                <color key="tintColor" red="0.78732731366398356" green="0.41910696877639331" blue="0.21539936682258443" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" backgroundImage="x.circle" catalog="system">
+                                    <color key="titleColor" red="0.89795245550000002" green="0.47721546279999999" blue="0.2714209776" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="dismissButtonTapped:" destination="KTg-Vs-VKP" eventType="touchUpInside" id="TdG-OZ-jzE"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="82G-jx-i4Y"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -573,17 +587,34 @@
                             <constraint firstItem="qw4-Ta-oSM" firstAttribute="centerX" secondItem="gRu-mj-ftw" secondAttribute="centerX" constant="-68.5" id="HTc-y4-JFu"/>
                             <constraint firstItem="O8O-qK-aSZ" firstAttribute="centerY" secondItem="gRu-mj-ftw" secondAttribute="centerY" constant="-265" id="JFT-aZ-0Nk"/>
                             <constraint firstItem="TPL-iK-PZW" firstAttribute="centerY" secondItem="gRu-mj-ftw" secondAttribute="centerY" constant="-180" id="R0c-IT-TM2"/>
+                            <constraint firstItem="ZAx-Hj-Ivg" firstAttribute="leading" secondItem="82G-jx-i4Y" secondAttribute="leading" constant="20" id="RmN-qP-KjP"/>
                             <constraint firstItem="8X8-FB-phk" firstAttribute="centerY" secondItem="gRu-mj-ftw" secondAttribute="centerY" constant="-360" id="Tyd-Gr-LWR"/>
                             <constraint firstItem="aNQ-AS-DCo" firstAttribute="centerY" secondItem="gRu-mj-ftw" secondAttribute="centerY" constant="-20" id="UrP-Jl-JQZ"/>
                             <constraint firstItem="TPL-iK-PZW" firstAttribute="centerX" secondItem="gRu-mj-ftw" secondAttribute="centerX" id="V51-vC-Z9o"/>
                             <constraint firstItem="hMS-0y-P8E" firstAttribute="centerY" secondItem="gRu-mj-ftw" secondAttribute="centerY" constant="-90" id="YFX-2f-n4b"/>
                             <constraint firstItem="uL3-7G-wmL" firstAttribute="centerX" secondItem="gRu-mj-ftw" secondAttribute="centerX" constant="102" id="fci-ov-CMI"/>
                             <constraint firstItem="aNQ-AS-DCo" firstAttribute="centerX" secondItem="gRu-mj-ftw" secondAttribute="centerX" id="gQG-0d-bcI"/>
+                            <constraint firstItem="ZAx-Hj-Ivg" firstAttribute="top" secondItem="82G-jx-i4Y" secondAttribute="top" constant="10" id="hJA-kf-Afc"/>
                             <constraint firstItem="hMS-0y-P8E" firstAttribute="centerX" secondItem="gRu-mj-ftw" secondAttribute="centerX" id="rSi-wZ-OoT"/>
                             <constraint firstItem="8X8-FB-phk" firstAttribute="centerX" secondItem="gRu-mj-ftw" secondAttribute="centerX" id="vIH-K2-nLb"/>
                             <constraint firstItem="O8O-qK-aSZ" firstAttribute="centerX" secondItem="gRu-mj-ftw" secondAttribute="centerX" id="x5r-Uu-Ame"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="ageLabel" destination="5cX-ey-UFQ" id="BTt-CE-a4N"/>
+                        <outlet property="bloodTypeLabel" destination="XF5-lr-ihX" id="s5e-2K-IkQ"/>
+                        <outlet property="campaignDestinationLabel" destination="922-SV-29O" id="REu-hR-aIc"/>
+                        <outlet property="campaignNameLabel" destination="fFf-bn-zES" id="v2M-Eg-nai"/>
+                        <outlet property="chronicDiseasesLabel" destination="sD7-tT-Uxw" id="ZH1-JM-d7A"/>
+                        <outlet property="fullNameLabel" destination="mtG-ck-v6X" id="wJd-Zz-djH"/>
+                        <outlet property="genderLabel" destination="EDU-6L-iKX" id="JqJ-lP-aKD"/>
+                        <outlet property="languageLabel" destination="biY-fY-HDk" id="pEm-AP-OJ8"/>
+                        <outlet property="nationalityLabel" destination="RM7-kx-bhQ" id="aog-Aj-sAE"/>
+                        <outlet property="otherLanguagesLabel" destination="sqz-LW-JsE" id="HdY-vh-UUG"/>
+                        <outlet property="permitNumberLabel" destination="2y0-fD-AVC" id="gm7-7n-Pv3"/>
+                        <outlet property="phoneNumberLabel" destination="Mmb-G1-6Sw" id="HQO-x6-AYW"/>
+                        <outlet property="profilePicture" destination="GlW-Dm-Cpt" id="0O6-y4-6oU"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kgf-wg-U01" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -629,6 +660,7 @@
         <image name="calendar-interface-symbol-tool" width="512" height="512"/>
         <image name="female-avatar" width="512" height="512"/>
         <image name="location.north.fill" catalog="system" width="108" height="128"/>
+        <image name="x.circle" catalog="system" width="128" height="121"/>
         <systemColor name="systemGray2Color">
             <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

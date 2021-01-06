@@ -25,28 +25,7 @@ class TrackingHajjiesOnMapViewController: UIViewController, MKMapViewDelegate {
 
         mapView.delegate = self
     }
-//
-//
-//    func searchFor(selectedScope: Int, text: String) {
-//
-//        scopeID = selectedScope
-//
-//        switch scopeID {
-//
-//            case 0:
-//                fetchBySearchedPermitNumber(text: text)
-//                print("رقم التصريح")
-//
-//            case 1:
-////                fetchBySearchedCampName(text: text)
-//                print("اسم الحملة")
-//
-//            default:
-//                print("كل شيء")
-//
-//        }
-//
-//    }
+
     
     func fetchBySearchedPermitNumber(text: String) {
         //"H42-C1-001"

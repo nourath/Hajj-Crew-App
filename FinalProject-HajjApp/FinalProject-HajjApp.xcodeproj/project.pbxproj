@@ -154,6 +154,7 @@
 				3D31830625A399C90017F64B /* Frameworks */,
 				3D31830725A399C90017F64B /* Resources */,
 				ACCA79BA668DE935EF6DACA3 /* [CP] Embed Pods Frameworks */,
+				2DAC2219C89FF26943F55397 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -216,6 +217,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		2DAC2219C89FF26943F55397 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FinalProject-HajjApp/Pods-FinalProject-HajjApp-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FinalProject-HajjApp/Pods-FinalProject-HajjApp-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FinalProject-HajjApp/Pods-FinalProject-HajjApp-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		56A9D2F19B57891D3C42002F /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;

@@ -113,6 +113,8 @@ func captureQRCode() {
 
             let storyboard = UIStoryboard(name: "CrewTabBar", bundle: nil)
             let controller = storyboard.instantiateViewController(identifier: "hajjDetailsVC")
+            controller.modalTransitionStyle = .coverVertical
+            controller.modalPresentationStyle = .overFullScreen
             self.present(controller, animated: true)
             
             return
