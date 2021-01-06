@@ -27,13 +27,16 @@
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="fdb-84-IrE">
                                 <rect key="frame" x="0.0" y="44" width="414" height="769"/>
                             </mapView>
-                            <searchBar clipsSubviews="YES" contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="0kt-qW-IlT">
-                                <rect key="frame" x="47" y="108" width="320" height="60"/>
+                            <searchBar clipsSubviews="YES" contentMode="redraw" showsScopeBar="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0kt-qW-IlT">
+                                <rect key="frame" x="47" y="87" width="320" height="103"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="320" id="67I-t0-lbz"/>
-                                    <constraint firstAttribute="height" constant="60" id="Jpx-8n-ogu"/>
                                 </constraints>
                                 <textInputTraits key="textInputTraits"/>
+                                <scopeButtonTitles>
+                                    <string>رقم التصريح</string>
+                                    <string>اسم الحملة</string>
+                                </scopeButtonTitles>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                         <real key="value" value="20"/>
