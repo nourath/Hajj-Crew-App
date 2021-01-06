@@ -45,12 +45,12 @@ class TrackingHajjiesOnMapViewController: UIViewController, MKMapViewDelegate {
                 } else {
                     for document in querySnapshot!.documents {
                         print("hhhh \(document.documentID) => \(document.data())")
-//                        print(document.data().index(forKey: "currentLocation"))
                         let getCurrentLocation = document["currentLocation"] as! GeoPoint
                         let getName = document["fullName"] as! String
                         print(getCurrentLocation.latitude)
                         print(getCurrentLocation.longitude)
                         
+                        self.mapView.removeAnnotations(self.mapView.annotations)
                         //getting current location
                         let location = CLLocationCoordinate2DMake(getCurrentLocation.latitude, getCurrentLocation.longitude)
                         print("hajj's location: \(location)")
@@ -76,32 +76,6 @@ class TrackingHajjiesOnMapViewController: UIViewController, MKMapViewDelegate {
         mapView.showAnnotations(pins, animated: true)
     }
     
-//    func fetchHajjCoordinates() {
-//        print("function")
-//        let userId = CrewQRCodeScannerViewController.uidFromQRCode
-//        FirebaseConstants.users.getDocuments { (snapshot, err) in
-//            if let err = err {
-//                print("Error getting user's name: \(err)")
-//            } else {
-//                print("fffff")
-//
-//                if let currentUserDoc = snapshot?.documents.first(where: { ($0["uid"] as? String) == userId }) {
-//                    print("kkkkkk")
-//
-//                    let getcurrentLocation = currentUserDoc["currentLocation"] as! GeoPoint
-//                    let location = CLLocationCoordinate2DMake(getcurrentLocation.latitude, getcurrentLocation.longitude)
-//                    print("hajj's location: \(location)")
-//                    let region = MKCoordinateRegion(center: location, latitudinalMeters: 500.0, longitudinalMeters: 700.0)
-//                    self.mapView.setRegion(region, animated: true)
-//                    // Drop a pin
-//                    let dropPin = MKPointAnnotation()
-//                    dropPin.coordinate = location
-//                    dropPin.title = "موقع الحاج -رقم تصريح كذت-"
-//                    self.mapView.addAnnotation(dropPin)
-//                }
-//            }
-//        }
-//    }
 }
 
 //MARK: - Search Bar Delegate
@@ -115,12 +89,14 @@ extension TrackingHajjiesOnMapViewController: UISearchBarDelegate {
         }
         print(search)
         searchBar.resignFirstResponder()
+        mapView.removeAnnotations(mapView.annotations)
         searchFor(text: search)
         print("hh")
     }
     
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         searchBar.text = nil
+        mapView.removeAnnotations(mapView.annotations)
         searchBar.resignFirstResponder()
     }
 }
