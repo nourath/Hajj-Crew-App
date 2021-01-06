@@ -56,7 +56,8 @@ class HajjInfoViewController: UIViewController {
         
         additionalInfoView.roundCorners(corners: [.topLeft,.topRight], radius: 30)
         campaignView.roundCorners(corners: [.topLeft,.topRight], radius: 30)
-        fetchUserName()
+        
+        fetchHajjInfo()
         
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(HajjInfoViewController.imageTapped(gesture:)))
         
@@ -65,16 +66,11 @@ class HajjInfoViewController: UIViewController {
         barcodeView.addGestureRecognizer(tapGesture)
         // make sure imageView can be interacted with by user
         barcodeView.isUserInteractionEnabled = true
-        
-//        FirebaseConstants.picStorageRef.downloadURL(completion: { (url, error) in
-//        print("Image URL: \((url?.absoluteString)!)")
-//
-////        self.writeDatabaseCustomer(imageUrl: (url?.absoluteString)!)
-//        })
+
     }
     
     
-    func fetchUserName() {
+    func fetchHajjInfo() {
         
         if let userId = FirebaseConstants.userID?.uid {
             FirebaseConstants.users.getDocuments {  (snapshot, err) in
@@ -113,8 +109,20 @@ class HajjInfoViewController: UIViewController {
                         self.hajjPhoneNumber.text = String(getPhoneNumber)
                         self.hajjOtherLanguges.text = getOtherLanguages
                         self.hajjChronicDiseases.text = getChronicDisseases
+                        
+                        
+                        // Download in memory with a maximum allowed size of 1MB (1 * 1024 * 1024 bytes)
+                        FirebaseConstants.picStorageRef.child(getPicURL).getData(maxSize: 1 * 1024 * 1024) {
+                            data, error in
+                          if let error = error {
+                            print("Uh-oh, an \(error) occurred!")
+                          } else {
+                            // Data for "images/island.jpg" is returned
+                            let image = UIImage(data: data!)
+                            self.hajjPic.image = image
+                          }
+                        }
 
-                      //  print(getName)
                     }
                 }
             }

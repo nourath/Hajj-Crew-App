@@ -38,7 +38,9 @@ class TrackingHajjiesOnMapViewController: UIViewController, MKMapViewDelegate {
                     for document in querySnapshot!.documents {
                         print("hhhh \(document.documentID) => \(document.data())")
                         let getCurrentLocation = document["currentLocation"] as! GeoPoint
+                        let getPermitNo = document["permitNumber"] as! String
                         let getName = document["fullName"] as! String
+                        
                         print(getCurrentLocation.latitude)
                         print(getCurrentLocation.longitude)
                         
@@ -51,7 +53,8 @@ class TrackingHajjiesOnMapViewController: UIViewController, MKMapViewDelegate {
                         // Drop a pin
                         let dropPin = MKPointAnnotation()
                         dropPin.coordinate = location
-                        dropPin.title = getName
+                        dropPin.title = getPermitNo
+                        dropPin.subtitle = getName
                         self.mapView.addAnnotation(dropPin)
                         
                     }
