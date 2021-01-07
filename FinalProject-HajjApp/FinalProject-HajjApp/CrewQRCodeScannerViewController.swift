@@ -38,6 +38,10 @@ class CrewQRCodeScannerViewController: UIViewController, AVCaptureMetadataOutput
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
+        if (captureSession?.isRunning == true) {
+            captureSession.stopRunning()
+        }
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -120,6 +124,9 @@ func captureQRCode() {
             return
         }
         
+        if (captureSession?.isRunning == true) {
+            captureSession.stopRunning()
+        }
         self.dismiss(animated: true, completion: nil)
     }
     
