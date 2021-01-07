@@ -454,3 +454,18 @@ func dialNumber(number: String) {
             print("an error occured while dialing number")
    }
 }
+
+//do {
+//    try Auth.auth().signOut()
+//    print("Successfully logged user out..")
+//
+//    let storyboard = UIStoryboard(name: "Main", bundle: nil)
+//    let loginVC =  storyboard.instantiateViewController(identifier: "LoginVC")
+//    loginVC.modalPresentationStyle = .fullScreen
+//    present(loginVC, animated: true) {
+//        //do some `successfully logged out` animation here
+//    }
+//
+//} catch let signOutError as NSError {
+//    print("Error signing out: %@", signOutError)
+//}

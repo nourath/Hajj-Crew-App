@@ -45,7 +45,7 @@ class HajjInfoViewController: UIViewController {
 
     override func viewDidLoad() {
         print("ddddd")
-        fetchCampaignInfo()
+//        fetchCampaignInfo()
         
         locationManager = CLLocationManager()
         locationManager.requestAlwaysAuthorization()
@@ -74,7 +74,7 @@ class HajjInfoViewController: UIViewController {
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-        fetchCampaignInfo()
+//        fetchCampaignInfo()
 
     }
     
@@ -113,7 +113,7 @@ class HajjInfoViewController: UIViewController {
                         self.hajjGender.text = getGender
                         self.hajjBloodType.text = getBloodType
                         self.campaignName.text = getCampaign
-                       // self.campaignLocation.text =
+                        self.fetchCampaignInfo(fetchedCampName: getCampaign)
                         self.hajjPhoneNumber.text = String(getPhoneNumber)
                         self.hajjOtherLanguges.text = getOtherLanguages
                         self.hajjChronicDiseases.text = getChronicDisseases
@@ -139,10 +139,9 @@ class HajjInfoViewController: UIViewController {
     
     
     
-    func fetchCampaignInfo() {
+    func fetchCampaignInfo(fetchedCampName: String) {
         
-        let campName = FirebaseConstants.campaigns.document("camp1")
-        //        if FirebaseConstants.campaignID == campName {
+        let campName = FirebaseConstants.campaigns.document(fetchedCampName)
         
         campName.getDocument { (document, err) in
             if let err = err {
@@ -161,8 +160,12 @@ class HajjInfoViewController: UIViewController {
                     print(getCampaignLocation)
                     print(getCampaignCoordinates)
                     
+                    self.campaignName.text = getCampaignName
+                    self.campaignLocation.text = getCampaignLocation
+
                     self.campLat = getCampaignCoordinates.latitude
                     self.campLon = getCampaignCoordinates.longitude
+
 
                 } else {
                     print("doesn't exist")
