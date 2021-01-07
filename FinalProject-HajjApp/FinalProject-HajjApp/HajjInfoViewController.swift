@@ -4,11 +4,11 @@
 //
 //  Created by Abeer Pr on 21/05/1442 AH.
 //
-
 import UIKit
 import Firebase
 import CoreLocation
 import SDWebImage
+import SideMenu
 
 //protocol ImageSendingDelegateProtocol {
 //    func sendBarcodeToDeatailViewViewController(barcodeImage: UIImage)
@@ -35,11 +35,14 @@ class HajjInfoViewController: UIViewController {
     @IBOutlet var hajjChronicDiseases: UILabel!
     
     var hajj: Hajj?
+    private var sideMenu: SideMenuNavigationController?
+    
+    private let ChatController = ChatViewController()
     
     var locationManager: CLLocationManager!
     static var latitude =  CLLocationDegrees()
     static var longitude =  CLLocationDegrees()
-
+    
     override func viewDidLoad() {
         
         
@@ -47,28 +50,44 @@ class HajjInfoViewController: UIViewController {
         locationManager.requestAlwaysAuthorization()
         locationManager.delegate = self
         
+        
+        
         if CLLocationManager.locationServicesEnabled() {
             locationManager.startUpdatingLocation()
         }
-    
-    
+        
+        
         healthConditionView.roundCorners(corners: [.topLeft,.topRight], radius: 30)
         
         additionalInfoView.roundCorners(corners: [.topLeft,.topRight], radius: 30)
         campaignView.roundCorners(corners: [.topLeft,.topRight], radius: 30)
-   
-        fetchUserName()
+        
+        
+        
+        fetchHajjInfo()
+        
         
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(HajjInfoViewController.imageTapped(gesture:)))
         
         barcodeView.addGestureRecognizer(tapGesture)
         barcodeView.isUserInteractionEnabled = true
         
-
+        let menu = MenuController(with: SideMenuItem.allCases)
+        menu.delegate = self
+        sideMenu = SideMenuNavigationController(rootViewController: menu)
+        sideMenu?.leftSide = true
+        
+        SideMenuManager.default.leftMenuNavigationController = sideMenu
+        SideMenuManager.default.addPanGestureToPresent(toView: view)
+        
+      
+        
+        
+        
     }
     
     
-    func fetchUserName() {
+    func fetchHajjInfo() {
         
         if let userId = FirebaseConstants.userID?.uid {
             FirebaseConstants.users.getDocuments {  (snapshot, err) in
@@ -79,13 +98,13 @@ class HajjInfoViewController: UIViewController {
                     if let currentUserDoc = snapshot?.documents.first(where: { ($0["uid"] as? String) == userId }) {
                         
                         self.barcodeView.image = self.generateQRCode(from: userId)
-                  
+                        
                         let getName = currentUserDoc["fullName"] as! String
                         let getAge = currentUserDoc["age"] as! Int
                         let getBloodType = currentUserDoc["bloodType"] as! String
                         let getCampaign = currentUserDoc["campaign"] as! String
                         let getChronicDisseases = currentUserDoc["chronicDiseases"] as! String
-                      //  let getcurrentLocation = currentUserDoc["fullName"] as! String
+                        //  let getcurrentLocation = currentUserDoc["fullName"] as! String
                         let getGender = currentUserDoc["gender"] as! String
                         let getMainLanguage = currentUserDoc["mainLanguage"] as! String
                         let getNationality = currentUserDoc["nationality"] as! String
@@ -103,12 +122,24 @@ class HajjInfoViewController: UIViewController {
                         self.hajjGender.text = getGender
                         self.hajjBloodType.text = getBloodType
                         self.campaignName.text = getCampaign
-                       // self.campaignLocation.text =
+                        // self.campaignLocation.text =
                         self.hajjPhoneNumber.text = String(getPhoneNumber)
                         self.hajjOtherLanguges.text = getOtherLanguages
                         self.hajjChronicDiseases.text = getChronicDisseases
-
-                      //  print(getName)
+                        
+                        
+                        // Download in memory with a maximum allowed size of 1MB (1 * 1024 * 1024 bytes)
+                        FirebaseConstants.picStorageRef.child(getPicURL).getData(maxSize: 1 * 1024 * 1024) {
+                            data, error in
+                            if let error = error {
+                                print("Uh-oh, an \(error) occurred!")
+                            } else {
+                                // Data for "images/island.jpg" is returned
+                                let image = UIImage(data: data!)
+                                self.hajjPic.image = image
+                            }
+                        }
+                        
                     }
                 }
             }
@@ -130,7 +161,7 @@ class HajjInfoViewController: UIViewController {
                     "inputColor1": CIColor(color: UIColor.black) // Background
                 ]
                 let colored = output.applyingFilter("CIFalseColor", parameters: colorParameters)
-
+                
                 return UIImage(ciImage: colored)
             }
         }
@@ -139,9 +170,9 @@ class HajjInfoViewController: UIViewController {
     }
     
     @objc func imageTapped(gesture: UIGestureRecognizer) {
-         // if the tapped view is a UIImageView then set it to imageview
-         if (gesture.view as? UIImageView) != nil {
-             print("Image Tapped")
+        // if the tapped view is a UIImageView then set it to imageview
+        if (gesture.view as? UIImageView) != nil {
+            print("Image Tapped")
             
             // Blur Visual Effect
             //            let blurEffect = UIBlurEffect(style: .regular)
@@ -154,14 +185,14 @@ class HajjInfoViewController: UIViewController {
             let detailBarcodeVC =  storyboard.instantiateViewController(identifier: "Barcode")
             detailBarcodeVC.modalPresentationStyle = .overFullScreen
             detailBarcodeVC.view.backgroundColor = .clear
-          //  DetailBarcodeViewController.barcodeImagePassed = hajjPic.image!
-           
-          //  dVC.barcodeImage.image = hajjPic.image
+            //  DetailBarcodeViewController.barcodeImagePassed = hajjPic.image!
+            
+            //  dVC.barcodeImage.image = hajjPic.image
             
             present(detailBarcodeVC, animated: true)
             
             
-         }
+        }
     }
     
 }
@@ -175,22 +206,22 @@ extension HajjInfoViewController: CLLocationManagerDelegate {
             
             // Getting last update values of user's current location coordinates
             self.locationManager.stopUpdatingLocation()
-
-//            let getName = document["fullName"] as! String
-//            print(getCurrentLocation.latitude)
-//            print(getCurrentLocation.longitude)
-
-        HajjInfoViewController.latitude = location.coordinate.latitude
-        print("Hajj's current lat: \(HajjInfoViewController.latitude)")
             
-        HajjInfoViewController.longitude = location.coordinate.longitude
-        print("Hajj's current long: \(HajjInfoViewController.longitude)")
-
-//           let getCurrentLocation = FirebaseConstants.users.document["currentLocation"] as! GeoPoint
-
-//            if let userId = FirebaseConstants.userID?.uid {
-//
-////                FirebaseConstants.users.whereField("uid", isEqualTo: userId).
+            //            let getName = document["fullName"] as! String
+            //            print(getCurrentLocation.latitude)
+            //            print(getCurrentLocation.longitude)
+            
+            HajjInfoViewController.latitude = location.coordinate.latitude
+            print("Hajj's current lat: \(HajjInfoViewController.latitude)")
+            
+            HajjInfoViewController.longitude = location.coordinate.longitude
+            print("Hajj's current long: \(HajjInfoViewController.longitude)")
+            
+            //           let getCurrentLocation = FirebaseConstants.users.document["currentLocation"] as! GeoPoint
+            
+            //            if let userId = FirebaseConstants.userID?.uid {
+            //
+            ////                FirebaseConstants.users.whereField("uid", isEqualTo: userId).
             //                FirebaseConstants.users.document(userId).updateData(["currentLocation": GeoPoint(latitude: HajjInfoViewController.latitude,
             //                                                                                                 longitude: HajjInfoViewController.longitude)]) { err in
             //                    if let err = err {
@@ -208,11 +239,11 @@ extension HajjInfoViewController: CLLocationManagerDelegate {
                         print("Error getting user's name: \(err)")
                     } else {
                         
-
+                        
                         if let currentUserDoc = snapshot?.documents.first(where: { ($0["uid"] as? String) == userId }) {
-//                            let getcurrentLocation = currentUserDoc["currentLocation"] as! GeoPoint
-//                            print(getcurrentLocation.latitude)
-//                            print(getcurrentLocation.longitude)
+                            //                            let getcurrentLocation = currentUserDoc["currentLocation"] as! GeoPoint
+                            //                            print(getcurrentLocation.latitude)
+                            //                            print(getcurrentLocation.longitude)
                             
                             FirebaseConstants.users.document(currentUserDoc.documentID).updateData(["currentLocation": GeoPoint(latitude: HajjInfoViewController.latitude, longitude: HajjInfoViewController.longitude)])
                             
@@ -228,4 +259,70 @@ extension HajjInfoViewController: CLLocationManagerDelegate {
         print(error)
         print("hhhhh")
     }
+    
+    @IBAction func didTapMenuButton() {
+        present(sideMenu!, animated: true)
+        
+        
+    }
+}
+
+extension HajjInfoViewController: MenuControllerDelegate {
+    
+    private func addChildControllers() {
+//        addChild(ChatController)
+//        view.addSubview(ChatController.view)
+//
+//        ChatController.view.frame = view.bounds
+//
+//        ChatController.didMove(toParent: self)
+//
+//        ChatController.view.isHidden = true
+//        ChatController.storyboard?.instantiateInitialViewController()
+        
+        let storyboard = UIStoryboard(name: "ChatStoryboard", bundle: nil)
+        let mainTabVC =  storyboard.instantiateViewController(identifier: "chat")
+         
+         view.window?.rootViewController = mainTabVC
+         view.window?.makeKeyAndVisible()
+
+    }
+    
+    
+    
+    func didselectMenuItem(named: SideMenuItem) {
+        sideMenu?.dismiss(animated: true, completion: nil)
+        
+       // title = named.rawValue
+        switch named {
+        case .contactUs:
+            ChatController.view.isHidden = true
+            print("contact us")
+            
+        case .sos:
+            ChatController.view.isHidden = true
+            print("sos")
+         
+            
+        case .Chat:
+            let storyboard = UIStoryboard(name: "ChatStoryboard", bundle: nil)
+//            let mainTabVC =  storyboard.instantiateViewController(identifier: "chat")
+//
+//             view.window?.rootViewController = mainTabVC
+//             view.window?.makeKeyAndVisible()
+        
+        
+            let controller = storyboard.instantiateViewController(withIdentifier: "chat")
+                addChild(controller)
+                controller.view.translatesAutoresizingMaskIntoConstraints = false
+                view.addSubview(controller.view)
+            controller.tabBarController?.tabBar.isHidden = true
+
+//            addChildControllers()
+//            ChatController.view.isHidden = false
+            
+        }
+    }
+    
+    
 }

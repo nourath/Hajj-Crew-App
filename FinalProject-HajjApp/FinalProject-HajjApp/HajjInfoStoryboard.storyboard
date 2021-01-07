@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="yIu-F8-6Vx">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="1Pw-tj-rUc">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Item-->
+        <!--Hajj Info View Controller-->
         <scene sceneID="szE-Mo-HXY">
             <objects>
                 <viewController id="yIu-F8-6Vx" customClass="HajjInfoViewController" customModule="FinalProject_HajjApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -28,12 +28,17 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="diS-od-IqK" customClass="DesignableView" customModule="FinalProject_HajjApp" customModuleProvider="target">
                                                 <rect key="frame" x="151.5" y="68" width="111" height="111"/>
                                                 <subviews>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="97J-Bg-hey">
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="97J-Bg-hey">
                                                         <rect key="frame" x="0.0" y="0.0" width="111" height="111"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="111" id="n4T-jR-FYC"/>
                                                             <constraint firstAttribute="height" constant="111" id="wa4-2Z-CCP"/>
                                                         </constraints>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                <real key="value" value="20"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
                                                     </imageView>
                                                 </subviews>
                                                 <color key="backgroundColor" systemColor="systemGray2Color"/>
@@ -617,7 +622,13 @@
                             <constraint firstItem="fVo-yY-ton" firstAttribute="top" secondItem="ZJy-rc-JKk" secondAttribute="top" id="yM4-YQ-So2"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="o7X-Gu-YNU"/>
+                    <navigationItem key="navigationItem" id="lG4-Wu-JuZ">
+                        <barButtonItem key="leftBarButtonItem" image="line.horizontal.3" catalog="system" id="FCO-Cf-VoD">
+                            <connections>
+                                <action selector="didTapMenuButton" destination="yIu-F8-6Vx" id="hgz-aW-o9J"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <size key="freeformSize" width="414" height="910"/>
                     <connections>
@@ -642,7 +653,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lpb-cv-ga6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-418.84057971014494" y="72.991071428571431"/>
+            <point key="canvasLocation" x="491.304347826087" y="72.991071428571431"/>
         </scene>
         <!--Detail Barcode View Controller-->
         <scene sceneID="fwg-xV-z1N">
@@ -706,7 +717,26 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HzI-xR-COb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="418.84057971014494" y="72.991071428571431"/>
+            <point key="canvasLocation" x="1328.985507246377" y="72.991071428571431"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="axN-6q-hUh">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="1Pw-tj-rUc" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="o7X-Gu-YNU"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="eCL-lA-jv5">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="yIu-F8-6Vx" kind="relationship" relationship="rootViewController" id="XN1-cz-Ngy"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Cho-UM-jVd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-418.84057971014494" y="72.991071428571431"/>
         </scene>
     </scenes>
     <resources>
@@ -714,6 +744,7 @@
         <image name="blood-type" width="512" height="512"/>
         <image name="calendar-interface-symbol-tool" width="512" height="512"/>
         <image name="female-avatar" width="512" height="512"/>
+        <image name="line.horizontal.3" catalog="system" width="128" height="64"/>
         <image name="location.north.fill" catalog="system" width="108" height="128"/>
         <image name="x.square.fill" catalog="system" width="128" height="114"/>
         <systemColor name="systemBackgroundColor">
