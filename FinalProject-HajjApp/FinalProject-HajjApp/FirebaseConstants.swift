@@ -14,8 +14,10 @@ class FirebaseConstants {
     static var firebaseAuth = Auth.auth()
     static var db = Firestore.firestore()
     static var userID = Auth.auth().currentUser
-    
+    static var campaignID = Firestore.firestore().collection("campaigns").document().documentID
+
     static var users = Firestore.firestore().collection("hajjies")
+    static var campaigns = Firestore.firestore().collection("campaigns")
     static var picStorageRef = Storage.storage().reference().child("hajjies-pictures")
     
 }

@@ -14,6 +14,9 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
 
-
+    @IBAction func callButtonTapped(_ sender: UIButton) {
+        dialNumber(number: "00966554750748")
+    }
+    
 }
 

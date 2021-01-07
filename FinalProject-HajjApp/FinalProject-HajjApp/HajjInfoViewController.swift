@@ -42,9 +42,15 @@ class HajjInfoViewController: UIViewController {
     var locationManager: CLLocationManager!
     static var latitude =  CLLocationDegrees()
     static var longitude =  CLLocationDegrees()
-    
+
+
+    var campLat = CLLocationDegrees()
+    var campLon = CLLocationDegrees()
+
+
     override func viewDidLoad() {
-        
+        print("ddddd")
+//        fetchCampaignInfo()
         
         locationManager = CLLocationManager()
         locationManager.requestAlwaysAuthorization()
@@ -85,7 +91,11 @@ class HajjInfoViewController: UIViewController {
         
         
     }
-    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+//        fetchCampaignInfo()
+
+    }
     
     func fetchHajjInfo() {
         
@@ -122,7 +132,10 @@ class HajjInfoViewController: UIViewController {
                         self.hajjGender.text = getGender
                         self.hajjBloodType.text = getBloodType
                         self.campaignName.text = getCampaign
+
                         // self.campaignLocation.text =
+                        self.fetchCampaignInfo(fetchedCampName: getCampaign)
+
                         self.hajjPhoneNumber.text = String(getPhoneNumber)
                         self.hajjOtherLanguges.text = getOtherLanguages
                         self.hajjChronicDiseases.text = getChronicDisseases
@@ -145,6 +158,74 @@ class HajjInfoViewController: UIViewController {
             }
         }
     }
+    
+    
+    
+    func fetchCampaignInfo(fetchedCampName: String) {
+        
+        let campName = FirebaseConstants.campaigns.document(fetchedCampName)
+        
+        campName.getDocument { (document, err) in
+            if let err = err {
+                print("Error getting user's name: \(err)")
+            } else {
+                
+                if let document = document, document.exists {
+                    
+                    print("hhhh \(document.documentID) => \(document.data())")
+                    
+                    let getCampaignName = document["name"] as! String
+                    let getCampaignLocation = document["location"] as! String
+                    let getCampaignCoordinates = document["coordinates"] as! GeoPoint
+                    
+                    print(getCampaignName)
+                    print(getCampaignLocation)
+                    print(getCampaignCoordinates)
+                    
+                    self.campaignName.text = getCampaignName
+                    self.campaignLocation.text = getCampaignLocation
+
+                    self.campLat = getCampaignCoordinates.latitude
+                    self.campLon = getCampaignCoordinates.longitude
+
+
+                } else {
+                    print("doesn't exist")
+                }
+                
+                }
+            }
+        }
+        
+    @IBAction func directionsToCampButtonTapped(_ sender: UIButton) {
+      
+        let desinationLat = campLat
+        let desinationLon = campLon
+        print("camp lat: \(campLat)")
+        print("camp lon: \(campLon)")
+
+        // Checking for nil values
+        if !(desinationLat == nil) || !(desinationLon == nil) {
+            // If device has no Google Map App (Run browser instead)
+            if let destinationURL = URL(string: "https://www.google.co.in/maps/dir/?saddr=\(HajjInfoViewController.latitude),\(HajjInfoViewController.longitude)&daddr=\(desinationLat),\(desinationLon)&directionsmode=driving&zoom=14&views=traffic") {
+              UIApplication.shared.open(destinationURL, options: [:], completionHandler: nil)
+            }
+        } else {
+            
+            // Show Alert when no Location Found
+            let alert = UIAlertController(title: "No Direction Found",
+                                          message: "There's no direction available for specified coordinates",
+                                          preferredStyle: UIAlertController.Style.alert)
+            
+            alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+            
+            print("There's no direction available..")
+        }
+
+    }
+    
+    
     
     func generateQRCode(from string: String) -> UIImage? {
         
@@ -195,8 +276,8 @@ class HajjInfoViewController: UIViewController {
         }
     }
     
-}
 
+}
 
 
 extension HajjInfoViewController: CLLocationManagerDelegate {
@@ -206,32 +287,17 @@ extension HajjInfoViewController: CLLocationManagerDelegate {
             
             // Getting last update values of user's current location coordinates
             self.locationManager.stopUpdatingLocation()
+
+     
+
+
+        HajjInfoViewController.latitude = location.coordinate.latitude
+        print("Hajj's current lat: \(HajjInfoViewController.latitude)")
             
-            //            let getName = document["fullName"] as! String
-            //            print(getCurrentLocation.latitude)
-            //            print(getCurrentLocation.longitude)
-            
-            HajjInfoViewController.latitude = location.coordinate.latitude
-            print("Hajj's current lat: \(HajjInfoViewController.latitude)")
-            
-            HajjInfoViewController.longitude = location.coordinate.longitude
-            print("Hajj's current long: \(HajjInfoViewController.longitude)")
-            
-            //           let getCurrentLocation = FirebaseConstants.users.document["currentLocation"] as! GeoPoint
-            
-            //            if let userId = FirebaseConstants.userID?.uid {
-            //
-            ////                FirebaseConstants.users.whereField("uid", isEqualTo: userId).
-            //                FirebaseConstants.users.document(userId).updateData(["currentLocation": GeoPoint(latitude: HajjInfoViewController.latitude,
-            //                                                                                                 longitude: HajjInfoViewController.longitude)]) { err in
-            //                    if let err = err {
-            //                        print("Error updating document: \(err)")
-            //                    } else {
-            //                        print("Document successfully updated")
-            //                    }
-            //                }
-            //
-            //            }
+        HajjInfoViewController.longitude = location.coordinate.longitude
+        print("Hajj's current long: \(HajjInfoViewController.longitude)")
+
+
             
             if let userId = FirebaseConstants.userID?.uid {
                 FirebaseConstants.users.getDocuments { (snapshot, err) in
@@ -241,9 +307,9 @@ extension HajjInfoViewController: CLLocationManagerDelegate {
                         
                         
                         if let currentUserDoc = snapshot?.documents.first(where: { ($0["uid"] as? String) == userId }) {
-                            //                            let getcurrentLocation = currentUserDoc["currentLocation"] as! GeoPoint
-                            //                            print(getcurrentLocation.latitude)
-                            //                            print(getcurrentLocation.longitude)
+
+            
+
                             
                             FirebaseConstants.users.document(currentUserDoc.documentID).updateData(["currentLocation": GeoPoint(latitude: HajjInfoViewController.latitude, longitude: HajjInfoViewController.longitude)])
                             
