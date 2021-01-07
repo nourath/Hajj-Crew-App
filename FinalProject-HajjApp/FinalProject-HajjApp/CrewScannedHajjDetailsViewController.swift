@@ -55,7 +55,7 @@ class CrewScannedHajjDetailsViewController: UIViewController {
                         let getOtherLanguages = currentUserDoc["otherLanguages"] as! String
                         let getPermitNumber = currentUserDoc["permitNumber"] as! String
                         let getPhoneNumber = currentUserDoc["phoneNumber"] as! Int
-                        let getPicURL = currentUserDoc["picture"]
+                        let getPicURL = currentUserDoc["picture"] as! String
                         let getcurrentLocation = currentUserDoc["currentLocation"] as! GeoPoint
                         
                         // Create an English-Arabic translator:
@@ -73,6 +73,18 @@ class CrewScannedHajjDetailsViewController: UIViewController {
                         
                         DispatchQueue.main.async { [self] in
                             
+                            // Download in memory with a maximum allowed size of 1MB (1 * 1024 * 1024 bytes)
+                            FirebaseConstants.picStorageRef.child(getPicURL).getData(maxSize: 1 * 1024 * 1024) {
+                                data, error in
+                              if let error = error {
+                                print("Uh-oh, an \(error) occurred!")
+                              } else {
+                                // Data for "images/island.jpg" is returned
+                                let image = UIImage(data: data!)
+                                self.profilePicture.image = image
+                              }
+                            }
+
                             permitNumberLabel.text = getPermitNumber
                             bloodTypeLabel.text = getBloodType
                             campaignNameLabel.text = getCampaign.uppercased()

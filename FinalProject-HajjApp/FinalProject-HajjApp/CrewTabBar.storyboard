@@ -120,12 +120,17 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="O8O-qK-aSZ" customClass="DesignableView" customModule="FinalProject_HajjApp" customModuleProvider="target">
                                 <rect key="frame" x="151.5" y="127.5" width="111" height="111"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="GlW-Dm-Cpt">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="GlW-Dm-Cpt">
                                         <rect key="frame" x="0.0" y="0.0" width="111" height="111"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="111" id="1yQ-bU-f44"/>
                                             <constraint firstAttribute="height" constant="111" id="dY9-8q-VVG"/>
                                         </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="20"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                     </imageView>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemGray2Color"/>
