@@ -39,8 +39,8 @@ class MenuController: UITableViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.backgroundColor = #colorLiteral(red: 0.02360551991, green: 0.2150389254, blue: 0.2304697633, alpha: 1)
-        view.backgroundColor = #colorLiteral(red: 0.02360551991, green: 0.2150389254, blue: 0.2304697633, alpha: 1)
+        tableView.backgroundColor = #colorLiteral(red: 0.2350148857, green: 0.3928009868, blue: 0.3512820601, alpha: 1)
+        view.backgroundColor = #colorLiteral(red: 0.2350148857, green: 0.3928009868, blue: 0.3512820601, alpha: 1)
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -54,7 +54,7 @@ class MenuController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         cell.textLabel?.text = menueItems[indexPath.row].rawValue
         cell.textLabel?.textColor = .white
-        cell.contentView.backgroundColor = #colorLiteral(red: 0.02360551991, green: 0.2150389254, blue: 0.2304697633, alpha: 1)
+        cell.contentView.backgroundColor = #colorLiteral(red: 0.2350148857, green: 0.3928009868, blue: 0.3512820601, alpha: 1)
         return cell
     }
     

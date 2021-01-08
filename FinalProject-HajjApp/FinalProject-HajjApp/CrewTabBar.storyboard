@@ -638,11 +638,22 @@
                     <connections>
                         <segue destination="578-IZ-UFp" kind="relationship" relationship="viewControllers" id="dTu-OU-f4t"/>
                         <segue destination="Y7z-eF-IVa" kind="relationship" relationship="viewControllers" id="3dd-SN-lGq"/>
+                        <segue destination="Bb7-u2-E5w" kind="relationship" relationship="viewControllers" id="oXp-0j-KgZ"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5zv-mk-suC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="163.768115942029" y="69.642857142857139"/>
+        </scene>
+        <!--ChatStoryboard-->
+        <scene sceneID="5cR-Mv-Co3">
+            <objects>
+                <viewControllerPlaceholder storyboardName="ChatStoryboard" id="Bb7-u2-E5w" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="62q-L0-9cQ"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0sp-gI-rft" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-291" y="483"/>
         </scene>
         <!--TrackingHajjies-->
         <scene sceneID="V1z-dK-3zS">

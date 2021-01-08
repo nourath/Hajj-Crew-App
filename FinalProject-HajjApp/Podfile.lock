@@ -354,6 +354,7 @@ PODS:
     - gRPC-Core/Interface (= 1.28.2)
   - gRPC-Core/Interface (1.28.2)
   - GTMSessionFetcher/Core (1.5.0)
+  - iOSUtilitiesSource (1.0.0)
   - leveldb-library (1.22)
   - MLKitCommon (0.64.0):
     - GoogleDataTransport (~> 7.0)
@@ -395,6 +396,7 @@ DEPENDENCIES:
   - Firebase/Storage
   - FirebaseFirestoreSwift
   - GoogleMLKit/Translate
+  - iOSUtilitiesSource (from `https://github.com/hasnine/iOSUtilitiesSource.git`)
   - SDWebImage (~> 5.0)
   - SideMenu
 
@@ -430,6 +432,15 @@ SPEC REPOS:
     - SDWebImage
     - SideMenu
 
+EXTERNAL SOURCES:
+  iOSUtilitiesSource:
+    :git: https://github.com/hasnine/iOSUtilitiesSource.git
+
+CHECKOUT OPTIONS:
+  iOSUtilitiesSource:
+    :commit: 0806dc2f1463355eb7b531b66e9130385be51c0e
+    :git: https://github.com/hasnine/iOSUtilitiesSource.git
+
 SPEC CHECKSUMS:
   abseil: 6c8eb7892aefa08d929b39f9bb108e5367e3228f
   BoringSSL-GRPC: 8edf627ee524575e2f8d19d56f068b448eea3879
@@ -451,6 +462,7 @@ SPEC CHECKSUMS:
   "gRPC-C++": 13d8ccef97d5c3c441b7e3c529ef28ebee86fad2
   gRPC-Core: 4afa11bfbedf7cdecd04de535a9e046893404ed5
   GTMSessionFetcher: b3503b20a988c4e20cc189aa798fd18220133f52
+  iOSUtilitiesSource: bd69d00b8fdf29d8d99303410ce44e9df3c6ec20
   leveldb-library: 55d93ee664b4007aac644a782d11da33fba316f7
   MLKitCommon: dc2909c96dbf7f5a75b86a3d2fa1b92ff3f6a30b
   MLKitNaturalLanguage: b127a0f557c0f2c375432e3737e6673889ff2bec
@@ -461,6 +473,6 @@ SPEC CHECKSUMS:
   SDWebImage: 0b2ba0d56479bf6a45ecddbfd5558bea93150d25
   SideMenu: f583187d21c5b1dd04c72002be544b555a2627a2
 
-PODFILE CHECKSUM: 46ca283e53545dc7bfdd4ed1575963d04b0facae
+PODFILE CHECKSUM: a3e31707ddafb40e48dc0c60baa9c2c1b86d8d9d
 
 COCOAPODS: 1.10.0

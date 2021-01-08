@@ -18,6 +18,7 @@ class FirebaseConstants {
 
     static var users = Firestore.firestore().collection("hajjies")
     static var campaigns = Firestore.firestore().collection("campaigns")
+    static var messages = Firestore.firestore().collection("messages")
     static var picStorageRef = Storage.storage().reference().child("hajjies-pictures")
     
 }

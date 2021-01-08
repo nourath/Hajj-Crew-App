@@ -362,11 +362,12 @@ extension HajjInfoViewController: MenuControllerDelegate {
        // title = named.rawValue
         switch named {
         case .contactUs:
-            ChatController.view.isHidden = true
+          //  ChatController.view.isHidden = true
+            dialNumber(number: "0556595164")
             print("contact us")
             
         case .sos:
-            ChatController.view.isHidden = true
+          //  ChatController.view.isHidden = true
             print("sos")
          
             

@@ -17,5 +17,6 @@ target 'FinalProject-HajjApp' do
   	pod 'SDWebImage', '~> 5.0'
 	pod 'GoogleMLKit/Translate'
 	pod 'SideMenu'
+	pod 'iOSUtilitiesSource', :git => 'https://github.com/hasnine/iOSUtilitiesSource.git'
 
 end

@@ -33,6 +33,7 @@
 		797F57D725A76F11005DA50F /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 797F57D625A76F11005DA50F /* ChatViewController.swift */; };
 		797F57F025A7ACBD005DA50F /* ChatStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 797F57EF25A7ACBD005DA50F /* ChatStoryboard.storyboard */; };
 		797F57F325A7BD02005DA50F /* MessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 797F57F225A7BD02005DA50F /* MessageCell.swift */; };
+		798146A525A89D2400135F51 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 798146A425A89D2400135F51 /* Message.swift */; };
 		79E0BF5A25A3C3E0001C1A4D /* HajjInfoStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 79E0BF5925A3C3E0001C1A4D /* HajjInfoStoryboard.storyboard */; };
 		79E0BF5D25A3C44D001C1A4D /* HajjInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E0BF5C25A3C44D001C1A4D /* HajjInfoViewController.swift */; };
 		894BFEF6C77D66D51E1B338C /* Pods_FinalProject_HajjApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFC1437F440907F30B8559BD /* Pods_FinalProject_HajjApp.framework */; };
@@ -68,6 +69,7 @@
 		797F57D625A76F11005DA50F /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		797F57EF25A7ACBD005DA50F /* ChatStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ChatStoryboard.storyboard; sourceTree = "<group>"; };
 		797F57F225A7BD02005DA50F /* MessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageCell.swift; sourceTree = "<group>"; };
+		798146A425A89D2400135F51 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		79E0BF5925A3C3E0001C1A4D /* HajjInfoStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HajjInfoStoryboard.storyboard; sourceTree = "<group>"; };
 		79E0BF5C25A3C44D001C1A4D /* HajjInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HajjInfoViewController.swift; sourceTree = "<group>"; };
 		B7D257C3452A3FE29C3FBAFE /* Pods-FinalProject-HajjApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FinalProject-HajjApp.release.xcconfig"; path = "Target Support Files/Pods-FinalProject-HajjApp/Pods-FinalProject-HajjApp.release.xcconfig"; sourceTree = "<group>"; };
@@ -119,6 +121,7 @@
 				79E0BF5C25A3C44D001C1A4D /* HajjInfoViewController.swift */,
 				797F57EF25A7ACBD005DA50F /* ChatStoryboard.storyboard */,
 				797F57D625A76F11005DA50F /* ChatViewController.swift */,
+				798146A425A89D2400135F51 /* Message.swift */,
 				797F57F225A7BD02005DA50F /* MessageCell.swift */,
 				797F57D025A7647D005DA50F /* MenuController.swift */,
 				3DE697EF25A46FA4002741BC /* Main.storyboard */,
@@ -303,6 +306,7 @@
 				3D1F819025A4D80D000C31E4 /* CrewLoginViewController.swift in Sources */,
 				3D1F815B25A49FB6000C31E4 /* Hajj.swift in Sources */,
 				3D1F819625A4DA70000C31E4 /* CrewQRCodeScannerViewController.swift in Sources */,
+				798146A525A89D2400135F51 /* Message.swift in Sources */,
 				3D31830F25A399C90017F64B /* SceneDelegate.swift in Sources */,
 				3DE697F325A479EB002741BC /* HajjLoginViewController.swift in Sources */,
 				3D427DEF25A5DC9B000C5B2C /* TrackingHajjiesOnMapViewController.swift in Sources */,
