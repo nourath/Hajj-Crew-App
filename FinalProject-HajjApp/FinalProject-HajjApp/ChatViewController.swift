@@ -58,6 +58,17 @@ class ChatViewController: UIViewController, UITextFieldDelegate {
        
     }
     
+//    override func viewWillAppear(_ animated: Bool) {
+//        super.viewWillAppear(true)
+//       // navigationController?.navigationItem.rightBarButtonItem(
+//        let button1 = UIBarButtonItem(image: UIImage(named: "imagename"), style: .plain, target: self, action: #selector("backButtonTapped")) // action:#selector(Class.MethodName) for swift 3
+//        self.navigationItem.rightBarButtonItem  = button1
+//    }
+//
+//    @objc func backButtonTapped(_ sender: UIBarButtonItem) {
+//
+//    }
+    
     @objc func handleTap(_ sender: UITapGestureRecognizer) {
         print("Hello World")
         messageTextFeild.endEditing(true)

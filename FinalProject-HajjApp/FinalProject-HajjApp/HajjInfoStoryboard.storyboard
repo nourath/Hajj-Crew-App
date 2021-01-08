@@ -725,7 +725,7 @@
         <!--Item-->
         <scene sceneID="axN-6q-hUh">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="1Pw-tj-rUc" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="home" automaticallyAdjustsScrollViewInsets="NO" id="1Pw-tj-rUc" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="o7X-Gu-YNU"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="eCL-lA-jv5">

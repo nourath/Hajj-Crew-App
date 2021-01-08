@@ -335,7 +335,7 @@ extension HajjInfoViewController: CLLocationManagerDelegate {
 
 extension HajjInfoViewController: MenuControllerDelegate {
     
-    private func addChildControllers() {
+    private func addChatController() {
 //        addChild(ChatController)
 //        view.addSubview(ChatController.view)
 //
@@ -345,12 +345,20 @@ extension HajjInfoViewController: MenuControllerDelegate {
 //
 //        ChatController.view.isHidden = true
 //        ChatController.storyboard?.instantiateInitialViewController()
+//  ----
+//        let storyboard = UIStoryboard(name: "ChatStoryboard", bundle: nil)
+//        let mainTabVC =  storyboard.instantiateViewController(identifier: "chat")
+//
+//         view.window?.rootViewController = mainTabVC
+//         view.window?.makeKeyAndVisible()
         
         let storyboard = UIStoryboard(name: "ChatStoryboard", bundle: nil)
-        let mainTabVC =  storyboard.instantiateViewController(identifier: "chat")
-         
-         view.window?.rootViewController = mainTabVC
-         view.window?.makeKeyAndVisible()
+
+        let controller = storyboard.instantiateViewController(withIdentifier: "chat")
+            addChild(controller)
+            controller.view.translatesAutoresizingMaskIntoConstraints = false
+            view.addSubview(controller.view)
+        controller.tabBarController?.tabBar.isHidden = true
 
     }
     
@@ -361,32 +369,45 @@ extension HajjInfoViewController: MenuControllerDelegate {
         
        // title = named.rawValue
         switch named {
+        case .home:
+//            let storyboard = UIStoryboard(name: "HajjInfoStoryboard", bundle: nil)
+//
+//            let controller = storyboard.instantiateViewController(withIdentifier: "home")
+//                addChild(controller)
+//                controller.view.translatesAutoresizingMaskIntoConstraints = false
+//                view.addSubview(controller.view)
+//            controller.tabBarController?.tabBar.isHidden = true
+            
+                    let storyboard = UIStoryboard(name: "TabBar", bundle: nil)
+                    let mainTabVC =  storyboard.instantiateViewController(identifier: "tabBar")
+            
+                     view.window?.rootViewController = mainTabVC
+                     view.window?.makeKeyAndVisible()
+    
+           
+            print("I am in home")
         case .contactUs:
-          //  ChatController.view.isHidden = true
+        //   ChatController.view.isHidden = true
             dialNumber(number: "0556595164")
             print("contact us")
             
         case .sos:
           //  ChatController.view.isHidden = true
+            dialNumber(number: "911")
             print("sos")
          
             
         case .Chat:
-            let storyboard = UIStoryboard(name: "ChatStoryboard", bundle: nil)
-//            let mainTabVC =  storyboard.instantiateViewController(identifier: "chat")
+//            let storyboard = UIStoryboard(name: "ChatStoryboard", bundle: nil)
 //
-//             view.window?.rootViewController = mainTabVC
-//             view.window?.makeKeyAndVisible()
-        
-        
-            let controller = storyboard.instantiateViewController(withIdentifier: "chat")
-                addChild(controller)
-                controller.view.translatesAutoresizingMaskIntoConstraints = false
-                view.addSubview(controller.view)
-            controller.tabBarController?.tabBar.isHidden = true
+//            let controller = storyboard.instantiateViewController(withIdentifier: "chat")
+//                addChild(controller)
+//                controller.view.translatesAutoresizingMaskIntoConstraints = false
+//                view.addSubview(controller.view)
+//            controller.tabBarController?.tabBar.isHidden = true
 
-//            addChildControllers()
-//            ChatController.view.isHidden = false
+           addChatController()
+
             
         }
     }

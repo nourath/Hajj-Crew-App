@@ -14,6 +14,7 @@ protocol MenuControllerDelegate {
 }
 
 enum SideMenuItem: String, CaseIterable {
+    case home = "Home"
     case contactUs = "Contact US"
     case sos = "SOS"
     case Chat = "Chat with translator"
