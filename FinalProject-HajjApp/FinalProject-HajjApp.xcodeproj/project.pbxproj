@@ -24,7 +24,6 @@
 		3D31832225A39CF10017F64B /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D31832125A39CF10017F64B /* Extensions.swift */; };
 		3D427DEC25A5DB1C000C5B2C /* TrackingHajjies.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D427DEB25A5DB1C000C5B2C /* TrackingHajjies.storyboard */; };
 		3D427DEF25A5DC9B000C5B2C /* TrackingHajjiesOnMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D427DEE25A5DC9B000C5B2C /* TrackingHajjiesOnMapViewController.swift */; };
-		3D427DF225A5DE9C000C5B2C /* HajjGeoPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D427DF125A5DE9C000C5B2C /* HajjGeoPoint.swift */; };
 		3D7F615525A7225F0080696E /* Campaign.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D7F615425A7225F0080696E /* Campaign.swift */; };
 		3DE697F025A46FA4002741BC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3DE697EF25A46FA4002741BC /* Main.storyboard */; };
 		3DE697F325A479EB002741BC /* HajjLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE697F225A479EB002741BC /* HajjLoginViewController.swift */; };
@@ -60,7 +59,6 @@
 		3D31832125A39CF10017F64B /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		3D427DEB25A5DB1C000C5B2C /* TrackingHajjies.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TrackingHajjies.storyboard; sourceTree = "<group>"; };
 		3D427DEE25A5DC9B000C5B2C /* TrackingHajjiesOnMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackingHajjiesOnMapViewController.swift; sourceTree = "<group>"; };
-		3D427DF125A5DE9C000C5B2C /* HajjGeoPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HajjGeoPoint.swift; sourceTree = "<group>"; };
 		3D7F615425A7225F0080696E /* Campaign.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Campaign.swift; sourceTree = "<group>"; };
 		3DE697EF25A46FA4002741BC /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		3DE697F225A479EB002741BC /* HajjLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HajjLoginViewController.swift; sourceTree = "<group>"; };
@@ -88,6 +86,43 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3D24854725AA382600330C62 /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				3DE697F225A479EB002741BC /* HajjLoginViewController.swift */,
+				3D1F818F25A4D80D000C31E4 /* CrewLoginViewController.swift */,
+			);
+			path = Authentication;
+			sourceTree = "<group>";
+		};
+		3D24854825AA383F00330C62 /* Chatting */ = {
+			isa = PBXGroup;
+			children = (
+				797F57D625A76F11005DA50F /* ChatViewController.swift */,
+				798146A425A89D2400135F51 /* Message.swift */,
+				797F57F225A7BD02005DA50F /* MessageCell.swift */,
+			);
+			path = Chatting;
+			sourceTree = "<group>";
+		};
+		3D24854B25AA386A00330C62 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				3D1F815A25A49FB6000C31E4 /* Hajj.swift */,
+				3D7F615425A7225F0080696E /* Campaign.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		3D24854D25AA399100330C62 /* Hajj's Home */ = {
+			isa = PBXGroup;
+			children = (
+				797F57D025A7647D005DA50F /* MenuController.swift */,
+				79E0BF5C25A3C44D001C1A4D /* HajjInfoViewController.swift */,
+			);
+			path = "Hajj's Home";
+			sourceTree = "<group>";
+		};
 		3D31830025A399C80017F64B = {
 			isa = PBXGroup;
 			children = (
@@ -109,38 +144,40 @@
 		3D31830B25A399C90017F64B /* FinalProject-HajjApp */ = {
 			isa = PBXGroup;
 			children = (
-				3D31832125A39CF10017F64B /* Extensions.swift */,
 				3D31830C25A399C90017F64B /* AppDelegate.swift */,
 				3D31830E25A399C90017F64B /* SceneDelegate.swift */,
-				3D1F815A25A49FB6000C31E4 /* Hajj.swift */,
-				3D7F615425A7225F0080696E /* Campaign.swift */,
+				3D31832125A39CF10017F64B /* Extensions.swift */,
+				3D1F815425A49EBD000C31E4 /* FirebaseConstants.swift */,
 				3D31831025A399C90017F64B /* ViewController.swift */,
+				3D24854B25AA386A00330C62 /* Models */,
+				3D24854725AA382600330C62 /* Authentication */,
+				3D24854D25AA399100330C62 /* Hajj's Home */,
+				3D6DB7D825AA2BF100D16487 /* Tracking Hajjies */,
+				3D24854825AA383F00330C62 /* Chatting */,
+				3DE697EF25A46FA4002741BC /* Main.storyboard */,
 				3D31831225A399C90017F64B /* TabBar.storyboard */,
 				79E0BF5925A3C3E0001C1A4D /* HajjInfoStoryboard.storyboard */,
-				7955823E25A4D8FB00470BD5 /* DetailBarcodeViewController.swift */,
-				79E0BF5C25A3C44D001C1A4D /* HajjInfoViewController.swift */,
 				797F57EF25A7ACBD005DA50F /* ChatStoryboard.storyboard */,
-				797F57D625A76F11005DA50F /* ChatViewController.swift */,
-				798146A425A89D2400135F51 /* Message.swift */,
-				797F57F225A7BD02005DA50F /* MessageCell.swift */,
-				797F57D025A7647D005DA50F /* MenuController.swift */,
-				3DE697EF25A46FA4002741BC /* Main.storyboard */,
-				3DE697F225A479EB002741BC /* HajjLoginViewController.swift */,
 				3D1F818C25A4D7D4000C31E4 /* CrewAuthentication.storyboard */,
 				3D1F819225A4DA1F000C31E4 /* CrewTabBar.storyboard */,
 				3D427DEB25A5DB1C000C5B2C /* TrackingHajjies.storyboard */,
-				3D427DEE25A5DC9B000C5B2C /* TrackingHajjiesOnMapViewController.swift */,
-				3D427DF125A5DE9C000C5B2C /* HajjGeoPoint.swift */,
-				3D1F819B25A4E8DE000C31E4 /* CrewScannedHajjDetailsViewController.swift */,
-				3D1F818F25A4D80D000C31E4 /* CrewLoginViewController.swift */,
-				3D1F819525A4DA70000C31E4 /* CrewQRCodeScannerViewController.swift */,
-				3D1F815425A49EBD000C31E4 /* FirebaseConstants.swift */,
 				3D31831525A399CD0017F64B /* Assets.xcassets */,
 				3D31831725A399CD0017F64B /* LaunchScreen.storyboard */,
 				3D1F815725A49F60000C31E4 /* GoogleService-Info.plist */,
 				3D31831A25A399CD0017F64B /* Info.plist */,
 			);
 			path = "FinalProject-HajjApp";
+			sourceTree = "<group>";
+		};
+		3D6DB7D825AA2BF100D16487 /* Tracking Hajjies */ = {
+			isa = PBXGroup;
+			children = (
+				3D427DEE25A5DC9B000C5B2C /* TrackingHajjiesOnMapViewController.swift */,
+				3D1F819B25A4E8DE000C31E4 /* CrewScannedHajjDetailsViewController.swift */,
+				3D1F819525A4DA70000C31E4 /* CrewQRCodeScannerViewController.swift */,
+				7955823E25A4D8FB00470BD5 /* DetailBarcodeViewController.swift */,
+			);
+			path = "Tracking Hajjies";
 			sourceTree = "<group>";
 		};
 		7D5D1C5152BF2F45F1FD4105 /* Pods */ = {
@@ -300,7 +337,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				3D31831125A399C90017F64B /* ViewController.swift in Sources */,
-				3D427DF225A5DE9C000C5B2C /* HajjGeoPoint.swift in Sources */,
 				797F57D725A76F11005DA50F /* ChatViewController.swift in Sources */,
 				3D31830D25A399C90017F64B /* AppDelegate.swift in Sources */,
 				3D1F819025A4D80D000C31E4 /* CrewLoginViewController.swift in Sources */,
@@ -466,7 +502,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 4NZH29JNZW;
+				DEVELOPMENT_TEAM = 87823T5P42;
 				INFOPLIST_FILE = "FinalProject-HajjApp/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -487,7 +523,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 4NZH29JNZW;
+				DEVELOPMENT_TEAM = 87823T5P42;
 				INFOPLIST_FILE = "FinalProject-HajjApp/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (

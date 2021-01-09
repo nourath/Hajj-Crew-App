@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Item-->
+        <!--الخريطة-->
         <scene sceneID="Zgb-HV-Ejl">
             <objects>
                 <viewController id="Vmd-Ir-fOt" customClass="TrackingHajjiesOnMapViewController" customModule="FinalProject_HajjApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -27,20 +27,55 @@
                                     <constraint firstAttribute="width" constant="414" id="IOh-p2-A7h"/>
                                 </constraints>
                             </view>
-                            <searchBar clipsSubviews="YES" contentMode="redraw" showsScopeBar="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0kt-qW-IlT" customClass="CustomSearchBar" customModule="FinalProject_HajjApp" customModuleProvider="target">
-                                <rect key="frame" x="47" y="86.5" width="320" height="103"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="p9x-fi-UZN" customClass="DesignableView" customModule="FinalProject_HajjApp" customModuleProvider="target">
+                                <rect key="frame" x="42" y="93" width="330" height="130"/>
+                                <subviews>
+                                    <searchBar clipsSubviews="YES" contentMode="redraw" showsScopeBar="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0kt-qW-IlT" customClass="CustomSearchBar" customModule="FinalProject_HajjApp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="330" height="130"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="tintColor" red="0.47450980390000003" green="0.63921568630000003" blue="0.59215686270000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <scopeButtonTitles>
+                                            <string>رقم التصريح</string>
+                                            <string>اسم الحملة</string>
+                                        </scopeButtonTitles>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="30"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                                <real key="value" value="5"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                                <real key="value" value="0.29999999999999999"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
+                                                <size key="value" width="1" height="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                                <color key="value" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="clearColor">
+                                                <color key="value" systemColor="systemYellowColor"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <outlet property="delegate" destination="Vmd-Ir-fOt" id="Sm6-Gj-d1f"/>
+                                        </connections>
+                                    </searchBar>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="320" id="67I-t0-lbz"/>
+                                    <constraint firstAttribute="width" constant="330" id="5v6-Me-5X5"/>
+                                    <constraint firstItem="0kt-qW-IlT" firstAttribute="leading" secondItem="p9x-fi-UZN" secondAttribute="leading" id="D9w-vG-6Pf"/>
+                                    <constraint firstItem="0kt-qW-IlT" firstAttribute="top" secondItem="p9x-fi-UZN" secondAttribute="top" id="SFs-cr-lMq"/>
+                                    <constraint firstAttribute="height" constant="130" id="flP-J0-yFV"/>
+                                    <constraint firstAttribute="trailing" secondItem="0kt-qW-IlT" secondAttribute="trailing" id="ixp-I4-1JB"/>
+                                    <constraint firstAttribute="bottom" secondItem="0kt-qW-IlT" secondAttribute="bottom" id="zyT-2D-eqV"/>
                                 </constraints>
-                                <textInputTraits key="textInputTraits"/>
-                                <scopeButtonTitles>
-                                    <string>رقم التصريح</string>
-                                    <string>اسم الحملة</string>
-                                </scopeButtonTitles>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="30"/>
+                                        <real key="value" value="20"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
                                         <real key="value" value="5"/>
@@ -54,14 +89,8 @@
                                     <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
                                         <color key="value" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="clearColor">
-                                        <color key="value" systemColor="systemYellowColor"/>
-                                    </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <outlet property="delegate" destination="Vmd-Ir-fOt" id="Sm6-Gj-d1f"/>
-                                </connections>
-                            </searchBar>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="mCz-aS-0MU"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -70,14 +99,14 @@
                             <constraint firstItem="mCz-aS-0MU" firstAttribute="trailing" secondItem="fdb-84-IrE" secondAttribute="trailing" id="5Zc-yC-Wwv"/>
                             <constraint firstItem="UoS-Ht-PKl" firstAttribute="centerY" secondItem="9oc-WA-lfe" secondAttribute="centerY" constant="-380" id="EpB-zi-ueE"/>
                             <constraint firstItem="UoS-Ht-PKl" firstAttribute="centerX" secondItem="9oc-WA-lfe" secondAttribute="centerX" id="KpI-se-eEw"/>
-                            <constraint firstItem="0kt-qW-IlT" firstAttribute="centerY" secondItem="9oc-WA-lfe" secondAttribute="centerY" constant="-310" id="R03-bH-MCI"/>
-                            <constraint firstItem="0kt-qW-IlT" firstAttribute="centerX" secondItem="9oc-WA-lfe" secondAttribute="centerX" id="Tcw-fK-X6G"/>
+                            <constraint firstItem="p9x-fi-UZN" firstAttribute="centerX" secondItem="9oc-WA-lfe" secondAttribute="centerX" id="Q4m-PM-rMd"/>
                             <constraint firstItem="fdb-84-IrE" firstAttribute="top" secondItem="mCz-aS-0MU" secondAttribute="top" constant="89" id="aeN-v5-n13"/>
+                            <constraint firstItem="p9x-fi-UZN" firstAttribute="centerY" secondItem="9oc-WA-lfe" secondAttribute="centerY" constant="-290" id="cTD-hv-plN"/>
                             <constraint firstItem="UoS-Ht-PKl" firstAttribute="centerX" secondItem="9oc-WA-lfe" secondAttribute="centerX" id="nnW-8M-ajW"/>
                             <constraint firstItem="mCz-aS-0MU" firstAttribute="bottom" secondItem="fdb-84-IrE" secondAttribute="bottom" id="pfC-Gd-jgQ"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="18P-5J-KX1"/>
+                    <tabBarItem key="tabBarItem" title="الخريطة" image="location.fill.viewfinder" catalog="system" id="18P-5J-KX1"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="mapView" destination="fdb-84-IrE" id="TeK-ID-pnJ"/>
@@ -95,6 +124,7 @@
         </designable>
     </designables>
     <resources>
+        <image name="location.fill.viewfinder" catalog="system" width="128" height="115"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

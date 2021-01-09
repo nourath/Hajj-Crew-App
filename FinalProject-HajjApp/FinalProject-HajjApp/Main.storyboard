@@ -178,7 +178,7 @@
                                     <constraint firstAttribute="width" constant="240" id="57f-c5-QvJ"/>
                                     <constraint firstAttribute="height" constant="30" id="kz6-3G-uTW"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                                 <color key="tintColor" red="0.47450980390000003" green="0.63921568630000003" blue="0.59215686270000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="  Hajj Crew? Login here" image="person.3.fill" catalog="system">
                                     <color key="titleColor" red="0.47450980390000003" green="0.63921568630000003" blue="0.59215686270000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

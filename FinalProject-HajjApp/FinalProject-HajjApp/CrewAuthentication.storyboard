@@ -20,7 +20,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
                             <view alpha="0.89999997615814209" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MDm-3L-dKB" customClass="DesignableView" customModule="FinalProject_HajjApp" customModuleProvider="target">
-                                <rect key="frame" x="50" y="459" width="314" height="70"/>
+                                <rect key="frame" x="50" y="474.5" width="314" height="70"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lock" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="UsR-aA-W18">
                                         <rect key="frame" x="15" y="10.5" width="30" height="48.5"/>
@@ -39,7 +39,6 @@
                                 <constraints>
                                     <constraint firstItem="UsR-aA-W18" firstAttribute="leading" secondItem="MDm-3L-dKB" secondAttribute="leading" constant="15" id="4BE-Ad-6xc"/>
                                     <constraint firstAttribute="bottom" secondItem="UsR-aA-W18" secondAttribute="bottom" constant="10" id="8bj-Nv-h8d"/>
-                                    <constraint firstAttribute="width" constant="300" id="B3K-sh-qqN"/>
                                     <constraint firstAttribute="height" constant="70" id="GqQ-Ni-dh6"/>
                                     <constraint firstAttribute="bottom" secondItem="fF5-XE-giz" secondAttribute="bottom" constant="10" id="Gxx-T7-oTh"/>
                                     <constraint firstItem="UsR-aA-W18" firstAttribute="top" secondItem="MDm-3L-dKB" secondAttribute="top" constant="10" id="O1K-y6-DpY"/>
@@ -66,7 +65,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view alpha="0.89999997615814209" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hXf-xb-U8t" customClass="DesignableView" customModule="FinalProject_HajjApp" customModuleProvider="target">
-                                <rect key="frame" x="50" y="359" width="314" height="70"/>
+                                <rect key="frame" x="50" y="374.5" width="314" height="70"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="gpT-Od-t6m">
                                         <rect key="frame" x="15" y="11.5" width="30" height="47.5"/>
@@ -86,7 +85,6 @@
                                     <constraint firstAttribute="bottom" secondItem="XIS-FL-jkn" secondAttribute="bottom" constant="10" id="C2w-QW-m3N"/>
                                     <constraint firstAttribute="trailing" secondItem="XIS-FL-jkn" secondAttribute="trailing" constant="10" id="Fn4-MC-Q5A"/>
                                     <constraint firstItem="gpT-Od-t6m" firstAttribute="top" secondItem="hXf-xb-U8t" secondAttribute="top" constant="10" id="Fqo-hi-FI3"/>
-                                    <constraint firstAttribute="width" constant="300" id="gIu-D8-igc"/>
                                     <constraint firstAttribute="height" constant="70" id="hPF-2K-LHh"/>
                                     <constraint firstItem="XIS-FL-jkn" firstAttribute="leading" secondItem="gpT-Od-t6m" secondAttribute="trailing" constant="15" id="m2n-CV-Yh6"/>
                                     <constraint firstAttribute="bottom" secondItem="gpT-Od-t6m" secondAttribute="bottom" constant="10" id="vgx-a2-qfd"/>
@@ -111,12 +109,12 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person.crop.circle.badge.checkmark" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="8df-co-8hP" customClass="DesignableImage" customModule="FinalProject_HajjApp" customModuleProvider="target">
-                                <rect key="frame" x="155.5" y="148" width="101.5" height="99.5"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="شعار بأعيننا أبيض بدون خلفية" translatesAutoresizingMaskIntoConstraints="NO" id="8df-co-8hP" customClass="DesignableImage" customModule="FinalProject_HajjApp" customModuleProvider="target">
+                                <rect key="frame" x="147" y="128" width="120" height="140"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="100" id="fsy-0a-pGh"/>
-                                    <constraint firstAttribute="width" constant="100" id="tNa-Xj-Rce"/>
+                                    <constraint firstAttribute="height" constant="140" id="fsy-0a-pGh"/>
+                                    <constraint firstAttribute="width" constant="120" id="tNa-Xj-Rce"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
@@ -133,12 +131,12 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome to &quot;App Name&quot;" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ccD-2U-eSe">
-                                <rect key="frame" x="82" y="273" width="250" height="26"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="تسجيل دخول طاقم" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ccD-2U-eSe">
+                                <rect key="frame" x="82" y="303" width="250" height="21.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="250" id="A6c-FX-PVd"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="21"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                                 <size key="shadowOffset" width="0.5" height="0.5"/>
@@ -151,7 +149,7 @@
                                     <constraint firstAttribute="height" constant="50" id="ial-XZ-INj"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
-                                <state key="normal" title="Login">
+                                <state key="normal" title="دخول">
                                     <color key="titleColor" red="0.33229398729999998" green="0.48755019900000002" blue="0.44280302519999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
@@ -194,11 +192,11 @@
                             <constraint firstItem="nNY-Ab-ZoW" firstAttribute="centerY" secondItem="dqE-Ha-th0" secondAttribute="centerY" constant="180" id="2Ga-fz-z8a"/>
                             <constraint firstItem="pfP-bh-1DU" firstAttribute="trailing" secondItem="MDm-3L-dKB" secondAttribute="trailing" constant="50" id="2Pj-Uv-I9u"/>
                             <constraint firstItem="nNY-Ab-ZoW" firstAttribute="centerX" secondItem="dqE-Ha-th0" secondAttribute="centerX" id="3cB-Dz-iQq"/>
-                            <constraint firstItem="hXf-xb-U8t" firstAttribute="top" secondItem="ccD-2U-eSe" secondAttribute="bottom" constant="60" id="4Yu-Cq-bSa"/>
+                            <constraint firstItem="hXf-xb-U8t" firstAttribute="top" secondItem="ccD-2U-eSe" secondAttribute="bottom" constant="50" id="4Yu-Cq-bSa"/>
                             <constraint firstItem="E5c-py-gKP" firstAttribute="top" secondItem="dqE-Ha-th0" secondAttribute="top" id="4w0-lN-c2p"/>
                             <constraint firstItem="MDm-3L-dKB" firstAttribute="top" secondItem="hXf-xb-U8t" secondAttribute="bottom" constant="30" id="5g6-ik-I98"/>
                             <constraint firstItem="hXf-xb-U8t" firstAttribute="leading" secondItem="pfP-bh-1DU" secondAttribute="leading" constant="50" id="AOf-qC-WxF"/>
-                            <constraint firstItem="ccD-2U-eSe" firstAttribute="top" secondItem="8df-co-8hP" secondAttribute="bottom" constant="25" id="IYb-M0-pys"/>
+                            <constraint firstItem="ccD-2U-eSe" firstAttribute="top" secondItem="8df-co-8hP" secondAttribute="bottom" constant="35" id="IYb-M0-pys"/>
                             <constraint firstItem="E5c-py-gKP" firstAttribute="leading" secondItem="dqE-Ha-th0" secondAttribute="leading" id="LUD-S0-3Zk"/>
                             <constraint firstItem="MDm-3L-dKB" firstAttribute="leading" secondItem="pfP-bh-1DU" secondAttribute="leading" constant="50" id="Lva-EM-lbS"/>
                             <constraint firstItem="ccD-2U-eSe" firstAttribute="centerX" secondItem="dqE-Ha-th0" secondAttribute="centerX" id="SO7-jm-roR"/>
@@ -234,18 +232,18 @@
     </scenes>
     <designables>
         <designable name="8df-co-8hP">
-            <size key="intrinsicContentSize" width="20.5" height="20"/>
+            <size key="intrinsicContentSize" width="1030" height="1631"/>
         </designable>
         <designable name="nNY-Ab-ZoW">
-            <size key="intrinsicContentSize" width="48" height="34"/>
+            <size key="intrinsicContentSize" width="46" height="34"/>
         </designable>
     </designables>
     <resources>
         <image name="HajjApp-Login-Background" width="375" height="812"/>
         <image name="lock" catalog="system" width="128" height="128"/>
         <image name="person" catalog="system" width="128" height="117"/>
-        <image name="person.crop.circle.badge.checkmark" catalog="system" width="128" height="113"/>
         <image name="person.fill" catalog="system" width="128" height="120"/>
+        <image name="شعار بأعيننا أبيض بدون خلفية" width="1030" height="1631"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
