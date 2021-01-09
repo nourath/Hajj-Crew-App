@@ -60,6 +60,10 @@
                                                 </constraints>
                                             </imageView>
                                         </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="383" id="7wg-3l-DSC"/>
+                                            <constraint firstAttribute="height" constant="87" id="Q3N-JD-TNX"/>
+                                        </constraints>
                                     </stackView>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="89F-6X-hjx">
                                         <rect key="frame" x="0.0" y="103" width="414" height="558"/>

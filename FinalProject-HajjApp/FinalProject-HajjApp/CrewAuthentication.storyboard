@@ -109,7 +109,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="شعار بأعيننا أبيض بدون خلفية" translatesAutoresizingMaskIntoConstraints="NO" id="8df-co-8hP" customClass="DesignableImage" customModule="FinalProject_HajjApp" customModuleProvider="target">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="شعار بأعيننا أبيض بدون خلفية" translatesAutoresizingMaskIntoConstraints="NO" id="8df-co-8hP" customClass="DesignableImage" customModule="FinalProject_HajjApp" customModuleProvider="target">
                                 <rect key="frame" x="147" y="128" width="120" height="140"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -243,7 +243,7 @@
         <image name="lock" catalog="system" width="128" height="128"/>
         <image name="person" catalog="system" width="128" height="117"/>
         <image name="person.fill" catalog="system" width="128" height="120"/>
-        <image name="شعار بأعيننا أبيض بدون خلفية" width="1030" height="1631"/>
+        <image name="شعار بأعيننا أبيض بدون خلفية" width="1030" height="1631"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
