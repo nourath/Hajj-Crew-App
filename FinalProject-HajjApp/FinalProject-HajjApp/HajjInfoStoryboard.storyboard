@@ -351,7 +351,7 @@
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                         </subviews>
-                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstItem="h8S-lI-9Iq" firstAttribute="top" secondItem="Dhf-CZ-CWT" secondAttribute="top" constant="11" id="5xa-9K-2A2"/>
                                                             <constraint firstAttribute="bottom" secondItem="h8S-lI-9Iq" secondAttribute="bottom" constant="12" id="GzY-Aa-wJF"/>
@@ -627,6 +627,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="lG4-Wu-JuZ">
                         <barButtonItem key="leftBarButtonItem" image="line.horizontal.3" catalog="system" id="FCO-Cf-VoD">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
                                 <action selector="didTapMenuButton" destination="yIu-F8-6Vx" id="hgz-aW-o9J"/>
                             </connections>
@@ -731,6 +732,10 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="eCL-lA-jv5">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.28902651806473095" green="0.42284445384416225" blue="0.38673768445711565" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>

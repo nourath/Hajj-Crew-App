@@ -23,12 +23,15 @@ class ChatViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet var viewContainsTheMessage: UIView!
     
-   
+    @IBOutlet var imageView: UIImageView!
+    
     
     var messages: [Message] = []
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        senderID.text = FirebaseConstants.firebaseAuth.currentUser?.email
+        senderID.textColor = .black
         
         view.backgroundColor = UIColor.white
      //   iOSKeyboardShared.shared.keyBoardShowHide(view: self.view)

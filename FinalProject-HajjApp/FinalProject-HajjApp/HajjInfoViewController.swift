@@ -370,14 +370,7 @@ extension HajjInfoViewController: MenuControllerDelegate {
        // title = named.rawValue
         switch named {
         case .home:
-//            let storyboard = UIStoryboard(name: "HajjInfoStoryboard", bundle: nil)
-//
-//            let controller = storyboard.instantiateViewController(withIdentifier: "home")
-//                addChild(controller)
-//                controller.view.translatesAutoresizingMaskIntoConstraints = false
-//                view.addSubview(controller.view)
-//            controller.tabBarController?.tabBar.isHidden = true
-            
+        
                     let storyboard = UIStoryboard(name: "TabBar", bundle: nil)
                     let mainTabVC =  storyboard.instantiateViewController(identifier: "tabBar")
             
@@ -407,6 +400,24 @@ extension HajjInfoViewController: MenuControllerDelegate {
 //            controller.tabBarController?.tabBar.isHidden = true
 
            addChatController()
+            
+            
+        case .logOut:
+            
+        do {
+            try Auth.auth().signOut()
+            print("Successfully logged user out..")
+        
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let loginVC =  storyboard.instantiateViewController(identifier: "loginVC")
+            loginVC.modalPresentationStyle = .fullScreen
+            present(loginVC, animated: true) {
+                //do some `successfully logged out` animation here
+            }
+        
+        } catch let signOutError as NSError {
+            print("Error signing out: %@", signOutError)
+        }
 
             
         }

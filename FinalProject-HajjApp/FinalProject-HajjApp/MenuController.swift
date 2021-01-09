@@ -15,9 +15,10 @@ protocol MenuControllerDelegate {
 
 enum SideMenuItem: String, CaseIterable {
     case home = "Home"
-    case contactUs = "Contact US"
-    case sos = "SOS"
     case Chat = "Chat with translator"
+    case sos = "SOS"
+    case contactUs = "Contact US"
+    case logOut = "Log out"
     
     //"Contact US","SOS","Chat with Translator"
 }
@@ -40,8 +41,11 @@ class MenuController: UITableViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.backgroundColor = #colorLiteral(red: 0.2350148857, green: 0.3928009868, blue: 0.3512820601, alpha: 1)
-        view.backgroundColor = #colorLiteral(red: 0.2350148857, green: 0.3928009868, blue: 0.3512820601, alpha: 1)
+     //   uina
+        UINavigationBar.appearance().barTintColor = #colorLiteral(red: 0.2904876769, green: 0.4913773537, blue: 0.4412539601, alpha: 1)
+        UINavigationBar.appearance().isTranslucent = true
+        tableView.backgroundColor = #colorLiteral(red: 0.2904876769, green: 0.4913773537, blue: 0.4412539601, alpha: 1)
+        view.backgroundColor = #colorLiteral(red: 0.2904876769, green: 0.4913773537, blue: 0.4412539601, alpha: 1)
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -54,8 +58,14 @@ class MenuController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         cell.textLabel?.text = menueItems[indexPath.row].rawValue
-        cell.textLabel?.textColor = .white
-        cell.contentView.backgroundColor = #colorLiteral(red: 0.2350148857, green: 0.3928009868, blue: 0.3512820601, alpha: 1)
+        if menueItems[indexPath.row].rawValue == "Log out" {
+            cell.textLabel?.textColor = #colorLiteral(red: 0.6109319925, green: 0.1044158116, blue: 0.03852597252, alpha: 1)
+            cell.textLabel?.font = .boldSystemFont(ofSize: 17)
+        } else {
+            cell.textLabel?.textColor = .white
+        }
+        
+        cell.contentView.backgroundColor = #colorLiteral(red: 0.2904876769, green: 0.4913773537, blue: 0.4412539601, alpha: 1)
         return cell
     }
     
