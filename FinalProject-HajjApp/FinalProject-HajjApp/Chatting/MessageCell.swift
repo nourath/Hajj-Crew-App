@@ -14,10 +14,15 @@ enum Sender {
 
 class MessageCell: UITableViewCell {
     
+    //MARK: - Outlets
+    
     @IBOutlet var messageContainerView: UIView!
     @IBOutlet var messageText: UILabel!
-    func getMessageDesign(sender: Sender){
-      //  messageText.textColor = #colorLiteral(red: 0.02360551991, green: 0.2150389254, blue: 0.2304697633, alpha: 1)
+    
+    //MARK: - Functions
+
+    func getMessageDesign(sender: Sender) {
+
         let backgroundColor: UIColor?
         
         switch sender {

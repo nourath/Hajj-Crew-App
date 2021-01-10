@@ -11,14 +11,21 @@ import CoreLocation
 import Firebase
 
 class TrackingHajjiesOnMapViewController: UIViewController, MKMapViewDelegate {
+    
+    //MARK: - Outlets
 
     @IBOutlet var searchBar: UISearchBar!
     @IBOutlet var mapView: MKMapView!
     
+    //MARK: - Properties
+
     var locationManager: CLLocationManager!
     static var latitude =  CLLocationDegrees()
     static var longitude =  CLLocationDegrees()
     var scopeID = 0
+
+    
+    //MARK: - Lifecycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,8 +34,10 @@ class TrackingHajjiesOnMapViewController: UIViewController, MKMapViewDelegate {
     }
 
     
+    //MARK: - Functions
+
     func fetchBySearchedPermitNumber(text: String) {
-        //"H42-C1-001"
+        //Current example: "H42-C1-001"
         FirebaseConstants.users.whereField("permitNumber", isEqualTo: text)
             .getDocuments() { (querySnapshot, err) in
                 if let err = err {
@@ -45,12 +54,14 @@ class TrackingHajjiesOnMapViewController: UIViewController, MKMapViewDelegate {
                         print(getCurrentLocation.longitude)
                         
                         self.mapView.removeAnnotations(self.mapView.annotations)
-                        //getting current location
+                        
+                        //Getting current location
                         let location = CLLocationCoordinate2DMake(getCurrentLocation.latitude, getCurrentLocation.longitude)
                         print("hajj's location: \(location)")
                         let region = MKCoordinateRegion(center: location, latitudinalMeters: 500.0, longitudinalMeters: 700.0)
                         self.mapView.setRegion(region, animated: true)
-                        // Drop a pin
+                        
+                        // Dropping a pin
                         let dropPin = MKPointAnnotation()
                         dropPin.coordinate = location
                         dropPin.title = getPermitNo
@@ -63,7 +74,7 @@ class TrackingHajjiesOnMapViewController: UIViewController, MKMapViewDelegate {
     }
     
     func fetchBySearchedCampName(text: String) {
-        //"camp1"
+        //Current example: "camp1"
         FirebaseConstants.users.whereField("campaign", isEqualTo: text)
             .getDocuments() { (querySnapshot, err) in
                 if let err = err {
@@ -77,13 +88,12 @@ class TrackingHajjiesOnMapViewController: UIViewController, MKMapViewDelegate {
                         print(getCurrentLocation.latitude)
                         print(getCurrentLocation.longitude)
                         
-//                        self.mapView.removeAnnotations(self.mapView.annotations)
-                        //getting current location
+                        //Getting current location
                         let location = CLLocationCoordinate2DMake(getCurrentLocation.latitude, getCurrentLocation.longitude)
                         print("hajj's location: \(location)")
                         let region = MKCoordinateRegion(center: location, latitudinalMeters: 500.0, longitudinalMeters: 700.0)
                         self.mapView.setRegion(region, animated: true)
-                        // Drop a pin
+                        // Dropping a pin
                         let dropPin = MKPointAnnotation()
                         dropPin.coordinate = location
                         dropPin.title = getName
@@ -134,9 +144,11 @@ extension TrackingHajjiesOnMapViewController: UISearchBarDelegate {
             return
         }
         print(search)
+        
         searchBar.resignFirstResponder()
         mapView.removeAnnotations(mapView.annotations)
         searchFor(selectedScope: scopeID, text: search)
+        
         print("hh")
     }
     
@@ -147,11 +159,7 @@ extension TrackingHajjiesOnMapViewController: UISearchBarDelegate {
     }
     
     func searchBar(_ searchBar: UISearchBar, selectedScopeButtonIndexDidChange selectedScope: Int) {
-
         scopeID = selectedScope
-
     }
-
-
 }
 

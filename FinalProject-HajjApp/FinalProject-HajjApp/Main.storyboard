@@ -20,7 +20,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
                             <view alpha="0.89999997615814209" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5xt-Cj-IaV" customClass="DesignableView" customModule="FinalProject_HajjApp" customModuleProvider="target">
-                                <rect key="frame" x="50" y="459" width="314" height="70"/>
+                                <rect key="frame" x="50" y="454" width="314" height="70"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lock" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="E3t-38-NPu">
                                         <rect key="frame" x="15" y="10.5" width="30" height="48.5"/>
@@ -42,7 +42,6 @@
                                     <constraint firstItem="opD-Ce-uyG" firstAttribute="leading" secondItem="E3t-38-NPu" secondAttribute="trailing" constant="15" id="Fn1-Bs-3Qc"/>
                                     <constraint firstAttribute="bottom" secondItem="E3t-38-NPu" secondAttribute="bottom" constant="10" id="MPg-Sd-fM6"/>
                                     <constraint firstAttribute="bottom" secondItem="opD-Ce-uyG" secondAttribute="bottom" constant="10" id="PnR-FC-hgC"/>
-                                    <constraint firstAttribute="width" constant="300" id="W4m-pC-Ns9"/>
                                     <constraint firstItem="E3t-38-NPu" firstAttribute="top" secondItem="5xt-Cj-IaV" secondAttribute="top" constant="10" id="l5g-1d-CTi"/>
                                     <constraint firstAttribute="trailing" secondItem="opD-Ce-uyG" secondAttribute="trailing" constant="10" id="mBm-uf-HeM"/>
                                     <constraint firstItem="E3t-38-NPu" firstAttribute="leading" secondItem="5xt-Cj-IaV" secondAttribute="leading" constant="15" id="rap-ej-tNl"/>
@@ -66,7 +65,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view alpha="0.89999997615814209" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QUw-W5-L4X" customClass="DesignableView" customModule="FinalProject_HajjApp" customModuleProvider="target">
-                                <rect key="frame" x="50" y="359" width="314" height="70"/>
+                                <rect key="frame" x="50" y="354" width="314" height="70"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="7Ag-vc-D0N">
                                         <rect key="frame" x="15" y="11.5" width="30" height="47.5"/>
@@ -85,7 +84,6 @@
                                 <constraints>
                                     <constraint firstItem="ehZ-oI-k4F" firstAttribute="top" secondItem="QUw-W5-L4X" secondAttribute="top" constant="10" id="AmS-8l-LvI"/>
                                     <constraint firstAttribute="trailing" secondItem="ehZ-oI-k4F" secondAttribute="trailing" constant="10" id="AoK-zl-cuU"/>
-                                    <constraint firstAttribute="width" constant="300" id="Fxw-PD-Upi"/>
                                     <constraint firstItem="ehZ-oI-k4F" firstAttribute="leading" secondItem="7Ag-vc-D0N" secondAttribute="trailing" constant="15" id="PXz-5t-YEL"/>
                                     <constraint firstAttribute="bottom" secondItem="7Ag-vc-D0N" secondAttribute="bottom" constant="10" id="aaT-Bf-evT"/>
                                     <constraint firstAttribute="height" constant="70" id="f81-ud-Zr5"/>
@@ -111,12 +109,12 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="شعار بأعيننا أبيض بدون خلفية" translatesAutoresizingMaskIntoConstraints="NO" id="jox-eV-vFi" customClass="DesignableImage" customModule="FinalProject_HajjApp" customModuleProvider="target">
-                                <rect key="frame" x="157" y="148" width="100" height="100"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="شعار بأعيننا أبيض بدون خلفية" translatesAutoresizingMaskIntoConstraints="NO" id="jox-eV-vFi" customClass="DesignableImage" customModule="FinalProject_HajjApp" customModuleProvider="target">
+                                <rect key="frame" x="147" y="133" width="120" height="130"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="100" id="Cmr-4N-qco"/>
-                                    <constraint firstAttribute="width" constant="100" id="O1m-yP-wiL"/>
+                                    <constraint firstAttribute="height" constant="130" id="Cmr-4N-qco"/>
+                                    <constraint firstAttribute="width" constant="120" id="O1m-yP-wiL"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
@@ -133,8 +131,8 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome to &quot;App Name&quot;" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mHS-Ys-HvH">
-                                <rect key="frame" x="82" y="273" width="250" height="26"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hajj App" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mHS-Ys-HvH">
+                                <rect key="frame" x="82" y="288" width="250" height="26"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="250" id="Asu-5G-7J2"/>
                                 </constraints>
@@ -208,7 +206,7 @@
                             <constraint firstItem="5xt-Cj-IaV" firstAttribute="top" secondItem="QUw-W5-L4X" secondAttribute="bottom" constant="30" id="l2S-Se-IOY"/>
                             <constraint firstItem="khF-hi-S2Q" firstAttribute="trailing" secondItem="5xt-Cj-IaV" secondAttribute="trailing" constant="50" id="pxJ-xT-YYA"/>
                             <constraint firstItem="oLn-zE-mD7" firstAttribute="leading" secondItem="ZES-HM-01h" secondAttribute="leading" id="qnp-37-e5Q"/>
-                            <constraint firstItem="QUw-W5-L4X" firstAttribute="top" secondItem="mHS-Ys-HvH" secondAttribute="bottom" constant="60" id="rnJ-KO-Z1R"/>
+                            <constraint firstItem="QUw-W5-L4X" firstAttribute="top" secondItem="mHS-Ys-HvH" secondAttribute="bottom" constant="40" id="rnJ-KO-Z1R"/>
                             <constraint firstAttribute="bottom" secondItem="oLn-zE-mD7" secondAttribute="bottom" id="xJp-a8-Qfi"/>
                         </constraints>
                     </view>
@@ -245,7 +243,7 @@
         <image name="lock" catalog="system" width="128" height="128"/>
         <image name="person" catalog="system" width="128" height="117"/>
         <image name="person.3.fill" catalog="system" width="128" height="61"/>
-        <image name="شعار بأعيننا أبيض بدون خلفية" width="1030" height="1631"/>
+        <image name="شعار بأعيننا أبيض بدون خلفية" width="1030" height="1631"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

@@ -10,11 +10,10 @@ import CoreLocation
 import SDWebImage
 import SideMenu
 
-//protocol ImageSendingDelegateProtocol {
-//    func sendBarcodeToDeatailViewViewController(barcodeImage: UIImage)
-//}
 
 class HajjInfoViewController: UIViewController {
+    
+    //MARK: - Outlets
     
     @IBOutlet var healthConditionView: DesignableView!
     @IBOutlet var additionalInfoView: UIView!
@@ -34,6 +33,8 @@ class HajjInfoViewController: UIViewController {
     @IBOutlet var hajjOtherLanguges: UILabel!
     @IBOutlet var hajjChronicDiseases: UILabel!
     
+    //MARK: - Properties
+    
     var hajj: Hajj?
     private var sideMenu: SideMenuNavigationController?
     
@@ -42,42 +43,36 @@ class HajjInfoViewController: UIViewController {
     var locationManager: CLLocationManager!
     static var latitude =  CLLocationDegrees()
     static var longitude =  CLLocationDegrees()
-
-
+    
+    
     var campLat = CLLocationDegrees()
     var campLon = CLLocationDegrees()
-
-
+    
+    
+    //MARK: - Lifecycle
+    
     override func viewDidLoad() {
-        print("ddddd")
-//        fetchCampaignInfo()
+                    
+        roundedCorners()
         
+        ///Core Location Manager
         locationManager = CLLocationManager()
         locationManager.requestAlwaysAuthorization()
         locationManager.delegate = self
-        
-        
         
         if CLLocationManager.locationServicesEnabled() {
             locationManager.startUpdatingLocation()
         }
         
-        
-        healthConditionView.roundCorners(corners: [.topLeft,.topRight], radius: 30)
-        
-        additionalInfoView.roundCorners(corners: [.topLeft,.topRight], radius: 30)
-        campaignView.roundCorners(corners: [.topLeft,.topRight], radius: 30)
-        
-        
-        
         fetchHajjInfo()
         
-        
+        /// Gesture Recognizer of QR Code Image
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(HajjInfoViewController.imageTapped(gesture:)))
         
         barcodeView.addGestureRecognizer(tapGesture)
         barcodeView.isUserInteractionEnabled = true
         
+        /// Slide Menu Setup
         let menu = MenuController(with: SideMenuItem.allCases)
         menu.delegate = self
         sideMenu = SideMenuNavigationController(rootViewController: menu)
@@ -86,15 +81,15 @@ class HajjInfoViewController: UIViewController {
         SideMenuManager.default.leftMenuNavigationController = sideMenu
         SideMenuManager.default.addPanGestureToPresent(toView: view)
         
-      
-        
-        
         
     }
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(true)
-//        fetchCampaignInfo()
-
+    
+    //MARK: - Functions
+    
+    func roundedCorners() {
+        healthConditionView.roundCorners(corners: [.topLeft,.topRight], radius: 30)
+        additionalInfoView.roundCorners(corners: [.topLeft,.topRight], radius: 30)
+        campaignView.roundCorners(corners: [.topLeft,.topRight], radius: 30)
     }
     
     func fetchHajjInfo() {
@@ -114,7 +109,6 @@ class HajjInfoViewController: UIViewController {
                         let getBloodType = currentUserDoc["bloodType"] as! String
                         let getCampaign = currentUserDoc["campaign"] as! String
                         let getChronicDisseases = currentUserDoc["chronicDiseases"] as! String
-                        //  let getcurrentLocation = currentUserDoc["fullName"] as! String
                         let getGender = currentUserDoc["gender"] as! String
                         let getMainLanguage = currentUserDoc["mainLanguage"] as! String
                         let getNationality = currentUserDoc["nationality"] as! String
@@ -132,12 +126,9 @@ class HajjInfoViewController: UIViewController {
                         self.hajjGender.text = getGender
                         self.hajjBloodType.text = getBloodType
                         self.campaignName.text = getCampaign
-
-                        // self.campaignLocation.text =
                         self.fetchCampaignInfo(fetchedCampName: getCampaign)
-
                         self.hajjPhoneNumber.text = String(getPhoneNumber)
-                        self.hajjOtherLanguges.text = getOtherLanguages
+                        self.hajjOtherLanguges.text = "Speaks: \(getOtherLanguages)"
                         self.hajjChronicDiseases.text = getChronicDisseases
                         
                         
@@ -184,31 +175,31 @@ class HajjInfoViewController: UIViewController {
                     
                     self.campaignName.text = getCampaignName
                     self.campaignLocation.text = getCampaignLocation
-
+                    
                     self.campLat = getCampaignCoordinates.latitude
                     self.campLon = getCampaignCoordinates.longitude
-
-
+                    
+                    
                 } else {
                     print("doesn't exist")
                 }
                 
-                }
             }
         }
-        
+    }
+    
     @IBAction func directionsToCampButtonTapped(_ sender: UIButton) {
-      
+        
         let desinationLat = campLat
         let desinationLon = campLon
         print("camp lat: \(campLat)")
         print("camp lon: \(campLon)")
-
+        
         // Checking for nil values
         if !(desinationLat == nil) || !(desinationLon == nil) {
             // If device has no Google Map App (Run browser instead)
             if let destinationURL = URL(string: "https://www.google.co.in/maps/dir/?saddr=\(HajjInfoViewController.latitude),\(HajjInfoViewController.longitude)&daddr=\(desinationLat),\(desinationLon)&directionsmode=driving&zoom=14&views=traffic") {
-              UIApplication.shared.open(destinationURL, options: [:], completionHandler: nil)
+                UIApplication.shared.open(destinationURL, options: [:], completionHandler: nil)
             }
         } else {
             
@@ -222,10 +213,10 @@ class HajjInfoViewController: UIViewController {
             
             print("There's no direction available..")
         }
-
+        
     }
     
-    
+    //MARK: - QRCode Generator
     
     func generateQRCode(from string: String) -> UIImage? {
         
@@ -241,6 +232,7 @@ class HajjInfoViewController: UIViewController {
                     "inputColor0": CIColor(color: UIColor.white), // Foreground
                     "inputColor1": CIColor(color: UIColor.black) // Background
                 ]
+                
                 let colored = output.applyingFilter("CIFalseColor", parameters: colorParameters)
                 
                 return UIImage(ciImage: colored)
@@ -251,24 +243,15 @@ class HajjInfoViewController: UIViewController {
     }
     
     @objc func imageTapped(gesture: UIGestureRecognizer) {
+        
         // if the tapped view is a UIImageView then set it to imageview
         if (gesture.view as? UIImageView) != nil {
             print("Image Tapped")
-            
-            // Blur Visual Effect
-            //            let blurEffect = UIBlurEffect(style: .regular)
-            //            let visualEffect = UIVisualEffectView(effect: blurEffect)
-            //            self.view.addSubview(visualEffect)
-            //            self.view.sendSubviewToBack(visualEffect)
-            //            visualEffect.frame = view.frame
             
             let storyboard = UIStoryboard(name: "HajjInfoStoryboard", bundle: nil)
             let detailBarcodeVC =  storyboard.instantiateViewController(identifier: "Barcode")
             detailBarcodeVC.modalPresentationStyle = .overFullScreen
             detailBarcodeVC.view.backgroundColor = .clear
-            //  DetailBarcodeViewController.barcodeImagePassed = hajjPic.image!
-            
-            //  dVC.barcodeImage.image = hajjPic.image
             
             present(detailBarcodeVC, animated: true)
             
@@ -276,7 +259,6 @@ class HajjInfoViewController: UIViewController {
         }
     }
     
-
 }
 
 
@@ -287,29 +269,22 @@ extension HajjInfoViewController: CLLocationManagerDelegate {
             
             // Getting last update values of user's current location coordinates
             self.locationManager.stopUpdatingLocation()
-
-     
-
-
-        HajjInfoViewController.latitude = location.coordinate.latitude
-        print("Hajj's current lat: \(HajjInfoViewController.latitude)")
             
-        HajjInfoViewController.longitude = location.coordinate.longitude
-        print("Hajj's current long: \(HajjInfoViewController.longitude)")
-
-
+            HajjInfoViewController.latitude = location.coordinate.latitude
+            print("Hajj's current lat: \(HajjInfoViewController.latitude)")
             
+            HajjInfoViewController.longitude = location.coordinate.longitude
+            print("Hajj's current long: \(HajjInfoViewController.longitude)")
+            
+            //Passing last updated version of user's current location
             if let userId = FirebaseConstants.userID?.uid {
                 FirebaseConstants.users.getDocuments { (snapshot, err) in
                     if let err = err {
                         print("Error getting user's name: \(err)")
+                        
                     } else {
                         
-                        
                         if let currentUserDoc = snapshot?.documents.first(where: { ($0["uid"] as? String) == userId }) {
-
-            
-
                             
                             FirebaseConstants.users.document(currentUserDoc.documentID).updateData(["currentLocation": GeoPoint(latitude: HajjInfoViewController.latitude, longitude: HajjInfoViewController.longitude)])
                             
@@ -328,98 +303,64 @@ extension HajjInfoViewController: CLLocationManagerDelegate {
     
     @IBAction func didTapMenuButton() {
         present(sideMenu!, animated: true)
-        
-        
     }
 }
 
 extension HajjInfoViewController: MenuControllerDelegate {
     
     private func addChatController() {
-//        addChild(ChatController)
-//        view.addSubview(ChatController.view)
-//
-//        ChatController.view.frame = view.bounds
-//
-//        ChatController.didMove(toParent: self)
-//
-//        ChatController.view.isHidden = true
-//        ChatController.storyboard?.instantiateInitialViewController()
-//  ----
-//        let storyboard = UIStoryboard(name: "ChatStoryboard", bundle: nil)
-//        let mainTabVC =  storyboard.instantiateViewController(identifier: "chat")
-//
-//         view.window?.rootViewController = mainTabVC
-//         view.window?.makeKeyAndVisible()
         
         let storyboard = UIStoryboard(name: "ChatStoryboard", bundle: nil)
-
+        
         let controller = storyboard.instantiateViewController(withIdentifier: "chat")
-            addChild(controller)
-            controller.view.translatesAutoresizingMaskIntoConstraints = false
-            view.addSubview(controller.view)
+        addChild(controller)
+        controller.view.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(controller.view)
         controller.tabBarController?.tabBar.isHidden = true
-
+        
     }
     
-    
-    
     func didselectMenuItem(named: SideMenuItem) {
+        
         sideMenu?.dismiss(animated: true, completion: nil)
         
-       // title = named.rawValue
         switch named {
-        case .home:
-        
-                    let storyboard = UIStoryboard(name: "TabBar", bundle: nil)
-                    let mainTabVC =  storyboard.instantiateViewController(identifier: "tabBar")
-            
-                     view.window?.rootViewController = mainTabVC
-                     view.window?.makeKeyAndVisible()
-    
-           
-            print("I am in home")
-        case .contactUs:
-        //   ChatController.view.isHidden = true
-            dialNumber(number: "0556595164")
-            print("contact us")
-            
-        case .sos:
-          //  ChatController.view.isHidden = true
-            dialNumber(number: "911")
-            print("sos")
-         
-            
-        case .Chat:
-//            let storyboard = UIStoryboard(name: "ChatStoryboard", bundle: nil)
-//
-//            let controller = storyboard.instantiateViewController(withIdentifier: "chat")
-//                addChild(controller)
-//                controller.view.translatesAutoresizingMaskIntoConstraints = false
-//                view.addSubview(controller.view)
-//            controller.tabBarController?.tabBar.isHidden = true
-
-           addChatController()
-            
-            
-        case .logOut:
-            
-        do {
-            try Auth.auth().signOut()
-            print("Successfully logged user out..")
-        
-            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            let loginVC =  storyboard.instantiateViewController(identifier: "loginVC")
-            loginVC.modalPresentationStyle = .fullScreen
-            present(loginVC, animated: true) {
-                //do some `successfully logged out` animation here
-            }
-        
-        } catch let signOutError as NSError {
-            print("Error signing out: %@", signOutError)
-        }
-
-            
+            case .home:
+                let storyboard = UIStoryboard(name: "TabBar", bundle: nil)
+                let mainTabVC =  storyboard.instantiateViewController(identifier: "tabBar")
+                
+                view.window?.rootViewController = mainTabVC
+                view.window?.makeKeyAndVisible()
+                
+                print("I am in home")
+                
+            case .contactUs:
+                dialNumber(number: "0556595164")
+                print("contact us")
+                
+            case .sos:
+                dialNumber(number: "911")
+                print("sos")
+                
+                
+            case .Chat:
+                addChatController()
+                
+            case .logOut:
+                
+                do {
+                    try Auth.auth().signOut()
+                    print("Successfully logged user out..")
+                    
+                    let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                    let loginVC =  storyboard.instantiateViewController(identifier: "loginVC")
+                    loginVC.modalPresentationStyle = .fullScreen
+                    present(loginVC, animated: true)
+                    
+                } catch let signOutError as NSError {
+                    print("Error signing out: %@", signOutError)
+                }
+                
         }
     }
     

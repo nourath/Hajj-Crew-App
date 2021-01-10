@@ -9,15 +9,22 @@ import UIKit
 
 class HajjLoginViewController: UIViewController {
 
+    
+    //MARK: - Outlets
+    
     @IBOutlet var emailTextField: UITextField!
     @IBOutlet var passwordTextField: UITextField!
     
+    
+    //MARK: - Lifecycle
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
     
+    //MARK: - Functions
     
     @IBAction func loginButtonTapped(_ sender: DesignableButton) {
         print(validateFields())

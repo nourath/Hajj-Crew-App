@@ -340,13 +340,13 @@
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dhf-CZ-CWT">
                                                         <rect key="frame" x="17" y="8" width="154" height="44"/>
                                                         <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Additional Info:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h8S-lI-9Iq">
-                                                                <rect key="frame" x="0.0" y="11" width="114" height="21"/>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Additional Info" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h8S-lI-9Iq">
+                                                                <rect key="frame" x="0.0" y="11" width="125" height="21"/>
                                                                 <constraints>
-                                                                    <constraint firstAttribute="width" constant="114" id="YAY-m6-Cw5"/>
+                                                                    <constraint firstAttribute="width" constant="125" id="YAY-m6-Cw5"/>
                                                                     <constraint firstAttribute="height" constant="21" id="y6L-4N-CwY"/>
                                                                 </constraints>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                                                 <color key="textColor" red="0.41177058220000001" green="0.41175404189999998" blue="0.41176530719999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
@@ -723,11 +723,11 @@
             </objects>
             <point key="canvasLocation" x="1328.985507246377" y="72.991071428571431"/>
         </scene>
-        <!--Item-->
+        <!--Navigation Controller-->
         <scene sceneID="axN-6q-hUh">
             <objects>
                 <navigationController storyboardIdentifier="home" automaticallyAdjustsScrollViewInsets="NO" id="1Pw-tj-rUc" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="o7X-Gu-YNU"/>
+                    <tabBarItem key="tabBarItem" title="" id="o7X-Gu-YNU"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="eCL-lA-jv5">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>

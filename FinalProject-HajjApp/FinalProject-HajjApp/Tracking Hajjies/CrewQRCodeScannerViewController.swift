@@ -9,19 +9,23 @@ import UIKit
 import AVFoundation
 import AudioToolbox
 
+//MARK: - QRCode Scanner Protocol
+
 protocol QRScanViewDelegate: class {
     func didScanQR(_ result: String)
 }
 
 class CrewQRCodeScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
     
+    //MARK: - Properties
+
     var captureSession: AVCaptureSession!
     var previewLayer: AVCaptureVideoPreviewLayer!
     static var uidFromQRCode = ""
-    
     weak var delegate: QRScanViewDelegate?
     
-    
+    //MARK: - Lifecycle
+
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor.black
@@ -35,15 +39,7 @@ class CrewQRCodeScannerViewController: UIViewController, AVCaptureMetadataOutput
         captureQRCode()
         
     }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-//        if (captureSession?.isRunning == true) {
-//            captureSession.stopRunning()
-//        }
-    }
-    
+
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         
@@ -52,50 +48,53 @@ class CrewQRCodeScannerViewController: UIViewController, AVCaptureMetadataOutput
         }
     }
 
-func captureQRCode() {
-    guard let videoCaptureDevice = AVCaptureDevice.default(for: AVMediaType.video)else{
-        
-        showAlert(message: NSLocalizedString("Cannot open camera", comment: "")) {
-            self.dismiss(animated: true, completion: nil)
-        }
-        return
-    }
+    //MARK: - Functions
 
-    captureSession = AVCaptureSession()
-    let videoInput: AVCaptureDeviceInput
-    
-    do {
-        videoInput = try AVCaptureDeviceInput(device: videoCaptureDevice)
-    } catch {
-        return
-    }
-    
-    if (captureSession.canAddInput(videoInput)) {
-        captureSession.addInput(videoInput)
-    } else {
-        failed()
-        return
-    }
-    
-    let metadataOutput = AVCaptureMetadataOutput()
-    
-    if (captureSession.canAddOutput(metadataOutput)) {
-        captureSession.addOutput(metadataOutput)
+    func captureQRCode() {
+        guard let videoCaptureDevice = AVCaptureDevice.default(for: AVMediaType.video)else{
+            
+            showAlert(message: NSLocalizedString("Cannot open camera", comment: "")) {
+                self.dismiss(animated: true, completion: nil)
+            }
+            return
+        }
         
-        metadataOutput.setMetadataObjectsDelegate(self, queue: DispatchQueue.main)
-        metadataOutput.metadataObjectTypes = [AVMetadataObject.ObjectType.qr]
-    } else {
-        failed()
-        return
+        captureSession = AVCaptureSession()
+        let videoInput: AVCaptureDeviceInput
+        
+        do {
+            videoInput = try AVCaptureDeviceInput(device: videoCaptureDevice)
+        } catch {
+            return
+        }
+        
+        if (captureSession.canAddInput(videoInput)) {
+            captureSession.addInput(videoInput)
+        } else {
+            failed()
+            return
+        }
+        
+        let metadataOutput = AVCaptureMetadataOutput()
+        
+        if (captureSession.canAddOutput(metadataOutput)) {
+            captureSession.addOutput(metadataOutput)
+            
+            metadataOutput.setMetadataObjectsDelegate(self, queue: DispatchQueue.main)
+            metadataOutput.metadataObjectTypes = [AVMetadataObject.ObjectType.qr]
+        } else {
+            failed()
+            return
+        }
+        
+        previewLayer = AVCaptureVideoPreviewLayer(session: captureSession)
+        previewLayer.frame = view.layer.bounds
+        previewLayer.videoGravity = AVLayerVideoGravity.resizeAspectFill
+        view.layer.addSublayer(previewLayer)
+        captureSession.startRunning()
+        
     }
     
-    previewLayer = AVCaptureVideoPreviewLayer(session: captureSession)
-    previewLayer.frame = view.layer.bounds
-    previewLayer.videoGravity = AVLayerVideoGravity.resizeAspectFill
-    view.layer.addSublayer(previewLayer)
-    captureSession.startRunning()
-        
-}
     func failed() {
         showAlert(message: NSLocalizedString("Scanning QR not supported", comment: "")) {
             self.dismiss(animated: true, completion: nil)
@@ -103,7 +102,6 @@ func captureQRCode() {
         
         captureSession = nil
     }
-
     
     func metadataOutput(_ output: AVCaptureMetadataOutput, didOutput metadataObjects: [AVMetadataObject], from connection: AVCaptureConnection) {
         captureSession.stopRunning()
@@ -127,7 +125,6 @@ func captureQRCode() {
         if (captureSession?.isRunning == true) {
             captureSession.stopRunning()
         }
-//        self.dismiss(animated: true, completion: nil)
     }
     
     override var prefersStatusBarHidden: Bool {

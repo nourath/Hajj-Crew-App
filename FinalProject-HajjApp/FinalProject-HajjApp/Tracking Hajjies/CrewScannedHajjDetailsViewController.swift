@@ -13,6 +13,8 @@ import MLKitTranslate
 
 class CrewScannedHajjDetailsViewController: UIViewController {
     
+    //MARK: - Outlets
+
     @IBOutlet var permitNumberLabel: DesignableLabel!
     @IBOutlet var profilePicture: UIImageView!
     @IBOutlet var fullNameLabel: UILabel!
@@ -27,6 +29,8 @@ class CrewScannedHajjDetailsViewController: UIViewController {
     @IBOutlet var otherLanguagesLabel: UILabel!
     @IBOutlet var chronicDiseasesLabel: UILabel!
     
+    //MARK: - Lifecycle
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -35,6 +39,9 @@ class CrewScannedHajjDetailsViewController: UIViewController {
         fetchHajjDetails()
     }
     
+    
+    //MARK: - Functions
+
     func fetchHajjDetails() {
         
          let userId = CrewQRCodeScannerViewController.uidFromQRCode
@@ -124,22 +131,6 @@ class CrewScannedHajjDetailsViewController: UIViewController {
 
 
                         }
-//                        DispatchQueue.main.async { [self] in
-//                            let translatedName = "\(translateToArabic(text: getName))"
-//
-//                            permitNumberLabel.text = getPermitNumber
-//                            fullNameLabel.text = translatedName
-//                            nationalityLabel.text = "\(translateToArabic(text: getNationality))"
-//                            languageLabel.text = translateToArabic(text: getMainLanguage)
-//                            bloodTypeLabel.text = getBloodType
-//                            ageLabel.text = String(getAge) + " عام "
-//                            genderLabel.text = translateToArabic(text: getGender)
-//                            campaignNameLabel.text = getCampaign
-//                            phoneNumberLabel.text = String(getPhoneNumber)
-//                            otherLanguagesLabel.text = " لغات أخرى: " + translateToArabic(text: getOtherLanguages)
-//                            chronicDiseasesLabel.text = translateToArabic(text: getChronicDisseases)
-//
-//                        }
                         
                         print(getName)
                         print(getAge)
@@ -173,38 +164,5 @@ class CrewScannedHajjDetailsViewController: UIViewController {
         self.view.addSubview(visualEffect)
         self.view.sendSubviewToBack(visualEffect)
         visualEffect.frame = view.frame
-    }
-
-    
-    func translateToArabic(text: String) {
-        
-//        var arabicText = ""
-
-        // Create an English-Arabic translator:
-        let options = TranslatorOptions(sourceLanguage: .english, targetLanguage: .arabic)
-        let englishArabicTranslator = Translator.translator(options: options)
-        let conditions = ModelDownloadConditions(
-            allowsCellularAccess: false,
-            allowsBackgroundDownloading: true
-        )
-
-        englishArabicTranslator.downloadModelIfNeeded(with: conditions) { error in
-            guard error == nil else { return }
-            // Model downloaded successfully. Okay to start translating.
-        }
-
-        englishArabicTranslator.translate(text) { translatedText, error in
-            guard error == nil, let translatedText = translatedText else { return }
-
-            // Translation succeeded.
-//            print("\(text) in arabic is: \(translatedText)")
-//            arabicText = translatedText
-//            print("lll " + arabicText)
-            print(translatedText)
-
-//            return translatedText
-        }
-//        print("lll " + arabicText)
-//        return arabicText
     }
 }

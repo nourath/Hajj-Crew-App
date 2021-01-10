@@ -11,66 +11,54 @@ import iOSUtilitiesSource
 
 class ChatViewController: UIViewController, UITextFieldDelegate {
     
+    //MARK: - Outlets
+
     @IBOutlet var sendButtonPressed: UIButton!
-    
-    
     @IBOutlet var messageTextFeild: UITextField!
-    
     @IBOutlet var messageTableView: UITableView!
-    
     @IBOutlet var senderID: UILabel!
-    
-    
     @IBOutlet var viewContainsTheMessage: UIView!
-    
     @IBOutlet var imageView: UIImageView!
     
-    
+    //MARK: - Properties
+
     var messages: [Message] = []
+    
+    //MARK: - Lifecycle
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        senderID.text = FirebaseConstants.firebaseAuth.currentUser?.email
-        senderID.textColor = .black
-        
         view.backgroundColor = UIColor.white
-     //   iOSKeyboardShared.shared.keyBoardShowHide(view: self.view)
         
+        ///Keyboard NC
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(sender:)), name: UIResponder.keyboardWillShowNotification, object: nil);
 
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(sender:)), name: UIResponder.keyboardWillHideNotification, object: nil);
    
-        //    view.backgroundColor = .blue
         print("in chat vc")
+        
+        /// Messages Table View Setup
         messageTableView.delegate = self
         messageTableView.dataSource = self
         messageTableView.separatorStyle = .none
         loadMessages()
         messageTextFeild.delegate = self
         
+        ///Sender ID Label Setup
+        senderID.text = FirebaseConstants.firebaseAuth.currentUser?.email
+        senderID.textColor = .black
+        senderID.textAlignment = .center
+        senderID.textColor = UIColor.white
         
+        ///Gesture Recognizer
         let tap = UITapGestureRecognizer(target: self, action: #selector(self.handleTap(_:)))
-
         view.addGestureRecognizer(tap)
-
         view.isUserInteractionEnabled = true
-
-     //   self.view.addSubview(view)
-
-        // function which is triggered when handleTap is called
        
     }
-    
-//    override func viewWillAppear(_ animated: Bool) {
-//        super.viewWillAppear(true)
-//       // navigationController?.navigationItem.rightBarButtonItem(
-//        let button1 = UIBarButtonItem(image: UIImage(named: "imagename"), style: .plain, target: self, action: #selector("backButtonTapped")) // action:#selector(Class.MethodName) for swift 3
-//        self.navigationItem.rightBarButtonItem  = button1
-//    }
-//
-//    @objc func backButtonTapped(_ sender: UIBarButtonItem) {
-//
-//    }
+
+    //MARK: - Functions
     
     @objc func handleTap(_ sender: UITapGestureRecognizer) {
         print("Hello World")
@@ -95,29 +83,29 @@ class ChatViewController: UIViewController, UITextFieldDelegate {
         return false
         
     }
+    
     override func resignFirstResponder() -> Bool {
         messageTextFeild.resignFirstResponder()
         return true
     }
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
-            animateViewMoving(up: true, moveValue: 100)
-        }
-
-        func textFieldDidEndEditing(_ textField: UITextField) {
-            animateViewMoving(up: false, moveValue: 100)
-        }
-        func animateViewMoving (up:Bool, moveValue :CGFloat){
-            let movementDuration:TimeInterval = 0.3
-            let movement:CGFloat = ( up ? -moveValue : moveValue)
-            UIView.beginAnimations( "animateView", context: nil)
-            UIView.setAnimationBeginsFromCurrentState(true)
-            UIView.setAnimationDuration(movementDuration )
-            viewContainsTheMessage.frame = viewContainsTheMessage.frame.offsetBy(dx: 0, dy: movement)
-            UIView.commitAnimations()
-        }
+        animateViewMoving(up: true, moveValue: 100)
+    }
     
-    //pushing
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        animateViewMoving(up: false, moveValue: 100)
+    }
+    
+    func animateViewMoving (up:Bool, moveValue :CGFloat) {
+        let movementDuration:TimeInterval = 0.3
+        let movement:CGFloat = ( up ? -moveValue : moveValue)
+        UIView.beginAnimations( "animateView", context: nil)
+        UIView.setAnimationBeginsFromCurrentState(true)
+        UIView.setAnimationDuration(movementDuration )
+        viewContainsTheMessage.frame = viewContainsTheMessage.frame.offsetBy(dx: 0, dy: movement)
+        UIView.commitAnimations()
+    }
     
     @IBAction func sendPressed(_ sender: UIButton) {
         messageTextFeild.endEditing(true)
@@ -140,14 +128,6 @@ class ChatViewController: UIViewController, UITextFieldDelegate {
             }
         }
     }
-    
-    
-//    @IBAction func viewdidTapped(_ sender: UITapGestureRecognizer) {
-//
-//     //   messageTextFeild.resignFirstResponder()
-//        messageTextFeild.endEditing(true)
-//        self.view.endEditing(true)
-//    }
     
 
 }
@@ -205,13 +185,3 @@ extension ChatViewController: UITableViewDelegate, UITableViewDataSource {
    
 }
 
-//extension ChatViewController: UITextFieldDelegate {
-//
-//    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-//        messageTextFeild.endEditing(true)
-//        return true
-//
-//    }
-//
-//
-//}

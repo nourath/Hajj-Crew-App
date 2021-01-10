@@ -8,10 +8,13 @@
 import UIKit
 import SideMenu
 
+//MARK: - Menu Selection Protocol
 
 protocol MenuControllerDelegate {
     func didselectMenuItem(named: SideMenuItem)
 }
+
+//MARK: - Menu Selection Enum
 
 enum SideMenuItem: String, CaseIterable {
     case home = "Home"
@@ -23,12 +26,17 @@ enum SideMenuItem: String, CaseIterable {
     //"Contact US","SOS","Chat with Translator"
 }
 
+//MARK: - Menu Controller Class
+
 class MenuController: UITableViewController {
     
+    //MARK: - Properties
+
     public var delegate: MenuControllerDelegate?
-    
     private let menueItems: [SideMenuItem]
     
+    //MARK: - Initializers
+
     init(with menueItems: [SideMenuItem]) {
         self.menueItems = menueItems
         super.init(nibName: nil, bundle: nil)
@@ -39,22 +47,32 @@ class MenuController: UITableViewController {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    //MARK: - Lifecycle
+
     override func viewDidLoad() {
         super.viewDidLoad()
-     //   uina
+
+        customizedUI()
+    }
+    
+    //MARK: - Functions
+
+    func customizedUI() {
         UINavigationBar.appearance().barTintColor = #colorLiteral(red: 0.2904876769, green: 0.4913773537, blue: 0.4412539601, alpha: 1)
         UINavigationBar.appearance().isTranslucent = true
         tableView.backgroundColor = #colorLiteral(red: 0.2904876769, green: 0.4913773537, blue: 0.4412539601, alpha: 1)
         view.backgroundColor = #colorLiteral(red: 0.2904876769, green: 0.4913773537, blue: 0.4412539601, alpha: 1)
+        
     }
     
+    
+    //MARK: - Table View Functions
+
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return menueItems.count
     }
-//    override func numberOfSections(in tableView: UITableView) -> Int {
-//        return menueItems.count
-//    }
-    
+
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         cell.textLabel?.text = menueItems[indexPath.row].rawValue
@@ -75,6 +93,5 @@ class MenuController: UITableViewController {
         let selectedItem = menueItems[indexPath.row]
         delegate?.didselectMenuItem(named: selectedItem)
     }
-    
     
 }

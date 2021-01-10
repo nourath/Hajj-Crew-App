@@ -11,29 +11,41 @@ import SDWebImage
 
 class DetailBarcodeViewController: UIViewController {
     
+    //MARK: - Outlets
+
     @IBOutlet var barcodeImage: UIImageView!
+
+    //MARK: - Properties
+
+    static var barcodeImagePassed: UIImage!
     
-   static var barcodeImagePassed: UIImage!
-    
-   
-    
+    //MARK: - Actions
+
     @IBAction func dismissButton(_ sender: UIButton) {
         
         self.dismiss(animated: true, completion: nil)
     }
     
+    //MARK: - Lifecycle
+
     override func viewDidLoad() {
+        blurryEffectOnBG()
+        barcodeImageGenerator()
+    }
+    
+    //MARK: - Functions
+
+    func blurryEffectOnBG(){
+        
         let blurEffect = UIBlurEffect(style: .regular)
         let visualEffect = UIVisualEffectView(effect: blurEffect)
         self.view.addSubview(visualEffect)
         self.view.sendSubviewToBack(visualEffect)
         visualEffect.frame = view.frame
-        barcodeImagefunc()
-    //    barcodeImage.image = DetailBarcodeViewController.barcodeImagePassed
-     //   view.backgroundColor = .clear
+
     }
     
-    func barcodeImagefunc() {
+    func barcodeImageGenerator() {
         if let userId = FirebaseConstants.userID?.uid {
             FirebaseConstants.users.getDocuments {  (snapshot, err) in
                 if let err = err {
@@ -43,14 +55,14 @@ class DetailBarcodeViewController: UIViewController {
                     if (snapshot?.documents.first(where: { ($0["uid"] as? String) == userId })) != nil {
                         
                         self.barcodeImage.image = self.generateQRCode(from: userId)
-    }
-    
-}
-
+                    }
+                    
+                }
+                
             }
-
+            
         }
-
+        
     }
     
     func generateQRCode(from string: String) -> UIImage? {
@@ -77,13 +89,3 @@ class DetailBarcodeViewController: UIViewController {
     }
 
 }
-
-//extension DetailBarcodeViewController: ImageSendingDelegateProtocol {
-//
-//    func sendBarcodeToDeatailViewViewController(barcodeImage: UIImage) {
-//        self.barcodeImage.image = barcodeImage
-//    }
-//
-//
-//
-//}

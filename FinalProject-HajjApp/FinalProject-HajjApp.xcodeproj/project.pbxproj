@@ -17,7 +17,6 @@
 		3D1F819C25A4E8DE000C31E4 /* CrewScannedHajjDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1F819B25A4E8DE000C31E4 /* CrewScannedHajjDetailsViewController.swift */; };
 		3D31830D25A399C90017F64B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D31830C25A399C90017F64B /* AppDelegate.swift */; };
 		3D31830F25A399C90017F64B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D31830E25A399C90017F64B /* SceneDelegate.swift */; };
-		3D31831125A399C90017F64B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D31831025A399C90017F64B /* ViewController.swift */; };
 		3D31831425A399C90017F64B /* TabBar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D31831225A399C90017F64B /* TabBar.storyboard */; };
 		3D31831625A399CD0017F64B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3D31831525A399CD0017F64B /* Assets.xcassets */; };
 		3D31831925A399CD0017F64B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D31831725A399CD0017F64B /* LaunchScreen.storyboard */; };
@@ -51,7 +50,6 @@
 		3D31830925A399C90017F64B /* FinalProject-HajjApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "FinalProject-HajjApp.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D31830C25A399C90017F64B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3D31830E25A399C90017F64B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		3D31831025A399C90017F64B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		3D31831325A399C90017F64B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/TabBar.storyboard; sourceTree = "<group>"; };
 		3D31831525A399CD0017F64B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3D31831825A399CD0017F64B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -148,12 +146,12 @@
 				3D31830E25A399C90017F64B /* SceneDelegate.swift */,
 				3D31832125A39CF10017F64B /* Extensions.swift */,
 				3D1F815425A49EBD000C31E4 /* FirebaseConstants.swift */,
-				3D31831025A399C90017F64B /* ViewController.swift */,
 				3D24854B25AA386A00330C62 /* Models */,
 				3D24854725AA382600330C62 /* Authentication */,
 				3D24854D25AA399100330C62 /* Hajj's Home */,
 				3D6DB7D825AA2BF100D16487 /* Tracking Hajjies */,
 				3D24854825AA383F00330C62 /* Chatting */,
+				3D31831725A399CD0017F64B /* LaunchScreen.storyboard */,
 				3DE697EF25A46FA4002741BC /* Main.storyboard */,
 				3D31831225A399C90017F64B /* TabBar.storyboard */,
 				79E0BF5925A3C3E0001C1A4D /* HajjInfoStoryboard.storyboard */,
@@ -162,7 +160,6 @@
 				3D1F819225A4DA1F000C31E4 /* CrewTabBar.storyboard */,
 				3D427DEB25A5DB1C000C5B2C /* TrackingHajjies.storyboard */,
 				3D31831525A399CD0017F64B /* Assets.xcassets */,
-				3D31831725A399CD0017F64B /* LaunchScreen.storyboard */,
 				3D1F815725A49F60000C31E4 /* GoogleService-Info.plist */,
 				3D31831A25A399CD0017F64B /* Info.plist */,
 			);
@@ -336,7 +333,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3D31831125A399C90017F64B /* ViewController.swift in Sources */,
 				797F57D725A76F11005DA50F /* ChatViewController.swift in Sources */,
 				3D31830D25A399C90017F64B /* AppDelegate.swift in Sources */,
 				3D1F819025A4D80D000C31E4 /* CrewLoginViewController.swift in Sources */,
@@ -502,7 +498,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 4NZH29JNZW;
+				DEVELOPMENT_TEAM = 87823T5P42;
 				INFOPLIST_FILE = "FinalProject-HajjApp/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -523,7 +519,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 4NZH29JNZW;
+				DEVELOPMENT_TEAM = 87823T5P42;
 				INFOPLIST_FILE = "FinalProject-HajjApp/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
