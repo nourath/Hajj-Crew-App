@@ -16,7 +16,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Scan Hajj QR Code" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mfS-9a-t7S">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="امسح بطاقة الحاج للقراءة" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mfS-9a-t7S">
                                 <rect key="frame" x="99.5" y="423" width="215" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="215" id="3wA-wE-EZW"/>
@@ -650,7 +650,7 @@
         <scene sceneID="5cR-Mv-Co3">
             <objects>
                 <viewControllerPlaceholder storyboardName="ChatStoryboard" id="Bb7-u2-E5w" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="62q-L0-9cQ"/>
+                    <tabBarItem key="tabBarItem" title="التواصل" image="message" catalog="system" id="62q-L0-9cQ"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0sp-gI-rft" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -677,6 +677,7 @@
         <image name="calendar-interface-symbol-tool" width="512" height="512"/>
         <image name="female-avatar" width="512" height="512"/>
         <image name="location.north.fill" catalog="system" width="108" height="128"/>
+        <image name="message" catalog="system" width="128" height="113"/>
         <image name="qrcode.viewfinder" catalog="system" width="128" height="115"/>
         <image name="x.circle" catalog="system" width="128" height="121"/>
         <systemColor name="systemGray2Color">

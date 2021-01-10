@@ -55,6 +55,9 @@
 		3D31831825A399CD0017F64B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3D31831A25A399CD0017F64B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3D31832125A39CF10017F64B /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		3D3332C325AB369000F8C929 /* Tajawal-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Tajawal-Medium.ttf"; sourceTree = "<group>"; };
+		3D3332C425AB369900F8C929 /* Tajawal-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Tajawal-Bold.ttf"; sourceTree = "<group>"; };
+		3D3332C525AB36A000F8C929 /* Tajawal-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Tajawal-Regular.ttf"; sourceTree = "<group>"; };
 		3D427DEB25A5DB1C000C5B2C /* TrackingHajjies.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TrackingHajjies.storyboard; sourceTree = "<group>"; };
 		3D427DEE25A5DC9B000C5B2C /* TrackingHajjiesOnMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackingHajjiesOnMapViewController.swift; sourceTree = "<group>"; };
 		3D7F615425A7225F0080696E /* Campaign.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Campaign.swift; sourceTree = "<group>"; };
@@ -160,6 +163,9 @@
 				3D1F819225A4DA1F000C31E4 /* CrewTabBar.storyboard */,
 				3D427DEB25A5DB1C000C5B2C /* TrackingHajjies.storyboard */,
 				3D31831525A399CD0017F64B /* Assets.xcassets */,
+				3D3332C525AB36A000F8C929 /* Tajawal-Regular.ttf */,
+				3D3332C325AB369000F8C929 /* Tajawal-Medium.ttf */,
+				3D3332C425AB369900F8C929 /* Tajawal-Bold.ttf */,
 				3D1F815725A49F60000C31E4 /* GoogleService-Info.plist */,
 				3D31831A25A399CD0017F64B /* Info.plist */,
 			);

@@ -93,7 +93,7 @@
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="mCz-aS-0MU"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="0.26671963929999998" green="0.3892681301" blue="0.3526313901" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="fdb-84-IrE" firstAttribute="leading" secondItem="mCz-aS-0MU" secondAttribute="leading" id="2cc-pt-62b"/>
                             <constraint firstItem="mCz-aS-0MU" firstAttribute="trailing" secondItem="fdb-84-IrE" secondAttribute="trailing" id="5Zc-yC-Wwv"/>
@@ -125,9 +125,6 @@
     </designables>
     <resources>
         <image name="location.fill.viewfinder" catalog="system" width="128" height="115"/>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
         <systemColor name="systemYellowColor">
             <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

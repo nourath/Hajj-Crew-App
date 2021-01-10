@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Chat View Controller-->
+        <!--الدعم-->
         <scene sceneID="QjT-KJ-L9D">
             <objects>
                 <viewController storyboardIdentifier="chat" id="O6k-mZ-66x" customClass="ChatViewController" customModule="FinalProject_HajjApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="otd-XG-wgI">
-                                <rect key="frame" x="0.0" y="44" width="414" height="749"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="700"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="27" translatesAutoresizingMaskIntoConstraints="NO" id="nkb-4C-NOm">
                                         <rect key="frame" x="15.5" y="0.0" width="383" height="87"/>
@@ -66,7 +66,7 @@
                                         </constraints>
                                     </stackView>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="89F-6X-hjx">
-                                        <rect key="frame" x="0.0" y="103" width="414" height="558"/>
+                                        <rect key="frame" x="0.0" y="103" width="414" height="509"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="414" id="AXB-Wf-jYm"/>
@@ -120,7 +120,7 @@
                                         </prototypes>
                                     </tableView>
                                     <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="olr-5k-XtA">
-                                        <rect key="frame" x="20" y="677" width="374" height="72"/>
+                                        <rect key="frame" x="20" y="628" width="374" height="72"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NUE-Kc-zAg">
                                                 <rect key="frame" x="17" y="19" width="281" height="34"/>
@@ -179,6 +179,8 @@
                             <constraint firstItem="otd-XG-wgI" firstAttribute="leading" secondItem="Fbb-gD-nei" secondAttribute="leading" id="iLR-kn-3D7"/>
                         </constraints>
                     </view>
+                    <tabBarItem key="tabBarItem" title="الدعم" image="t.bubble.ar" catalog="system" id="Ia3-lx-TMp"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="messageTableView" destination="89F-6X-hjx" id="Wzq-tR-XHe"/>
                         <outlet property="messageTextFeild" destination="NUE-Kc-zAg" id="q8a-KC-if8"/>
@@ -195,6 +197,7 @@
     </scenes>
     <resources>
         <image name="paperplane.fill" catalog="system" width="128" height="118"/>
+        <image name="t.bubble.ar" catalog="system" width="128" height="110"/>
         <systemColor name="opaqueSeparatorColor">
             <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
