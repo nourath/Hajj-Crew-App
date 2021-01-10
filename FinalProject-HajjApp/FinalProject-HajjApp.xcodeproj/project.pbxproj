@@ -23,6 +23,8 @@
 		3D31832225A39CF10017F64B /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D31832125A39CF10017F64B /* Extensions.swift */; };
 		3D427DEC25A5DB1C000C5B2C /* TrackingHajjies.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D427DEB25A5DB1C000C5B2C /* TrackingHajjies.storyboard */; };
 		3D427DEF25A5DC9B000C5B2C /* TrackingHajjiesOnMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D427DEE25A5DC9B000C5B2C /* TrackingHajjiesOnMapViewController.swift */; };
+		3D64AC0225AB650D00258141 /* HelveticaNeueLTArabic-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3D3332C825AB37BB00F8C929 /* HelveticaNeueLTArabic-Bold.ttf */; };
+		3D64AC0325AB651000258141 /* helveticaneuelt-arabic-55-roman.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3D3332C725AB37BA00F8C929 /* helveticaneuelt-arabic-55-roman.ttf */; };
 		3D7F615525A7225F0080696E /* Campaign.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D7F615425A7225F0080696E /* Campaign.swift */; };
 		3DE697F025A46FA4002741BC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3DE697EF25A46FA4002741BC /* Main.storyboard */; };
 		3DE697F325A479EB002741BC /* HajjLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE697F225A479EB002741BC /* HajjLoginViewController.swift */; };
@@ -55,9 +57,9 @@
 		3D31831825A399CD0017F64B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3D31831A25A399CD0017F64B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3D31832125A39CF10017F64B /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
-		3D3332C325AB369000F8C929 /* Tajawal-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Tajawal-Medium.ttf"; sourceTree = "<group>"; };
-		3D3332C425AB369900F8C929 /* Tajawal-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Tajawal-Bold.ttf"; sourceTree = "<group>"; };
-		3D3332C525AB36A000F8C929 /* Tajawal-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Tajawal-Regular.ttf"; sourceTree = "<group>"; };
+		3D3332C725AB37BA00F8C929 /* helveticaneuelt-arabic-55-roman.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "helveticaneuelt-arabic-55-roman.ttf"; sourceTree = "<group>"; };
+		3D3332C825AB37BB00F8C929 /* HelveticaNeueLTArabic-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "HelveticaNeueLTArabic-Bold.ttf"; sourceTree = "<group>"; };
+		3D3332CA25AB3C8900F8C929 /* Tajawal-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Tajawal-Medium.ttf"; sourceTree = "<group>"; };
 		3D427DEB25A5DB1C000C5B2C /* TrackingHajjies.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TrackingHajjies.storyboard; sourceTree = "<group>"; };
 		3D427DEE25A5DC9B000C5B2C /* TrackingHajjiesOnMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackingHajjiesOnMapViewController.swift; sourceTree = "<group>"; };
 		3D7F615425A7225F0080696E /* Campaign.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Campaign.swift; sourceTree = "<group>"; };
@@ -100,7 +102,6 @@
 			isa = PBXGroup;
 			children = (
 				797F57D625A76F11005DA50F /* ChatViewController.swift */,
-				798146A425A89D2400135F51 /* Message.swift */,
 				797F57F225A7BD02005DA50F /* MessageCell.swift */,
 			);
 			path = Chatting;
@@ -110,6 +111,7 @@
 			isa = PBXGroup;
 			children = (
 				3D1F815A25A49FB6000C31E4 /* Hajj.swift */,
+				798146A425A89D2400135F51 /* Message.swift */,
 				3D7F615425A7225F0080696E /* Campaign.swift */,
 			);
 			path = Models;
@@ -163,9 +165,9 @@
 				3D1F819225A4DA1F000C31E4 /* CrewTabBar.storyboard */,
 				3D427DEB25A5DB1C000C5B2C /* TrackingHajjies.storyboard */,
 				3D31831525A399CD0017F64B /* Assets.xcassets */,
-				3D3332C525AB36A000F8C929 /* Tajawal-Regular.ttf */,
-				3D3332C325AB369000F8C929 /* Tajawal-Medium.ttf */,
-				3D3332C425AB369900F8C929 /* Tajawal-Bold.ttf */,
+				3D3332C725AB37BA00F8C929 /* helveticaneuelt-arabic-55-roman.ttf */,
+				3D3332C825AB37BB00F8C929 /* HelveticaNeueLTArabic-Bold.ttf */,
+				3D3332CA25AB3C8900F8C929 /* Tajawal-Medium.ttf */,
 				3D1F815725A49F60000C31E4 /* GoogleService-Info.plist */,
 				3D31831A25A399CD0017F64B /* Info.plist */,
 			);
@@ -261,12 +263,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				3D31831925A399CD0017F64B /* LaunchScreen.storyboard in Resources */,
+				3D64AC0325AB651000258141 /* helveticaneuelt-arabic-55-roman.ttf in Resources */,
 				3D1F819325A4DA1F000C31E4 /* CrewTabBar.storyboard in Resources */,
 				3D427DEC25A5DB1C000C5B2C /* TrackingHajjies.storyboard in Resources */,
 				3D31831625A399CD0017F64B /* Assets.xcassets in Resources */,
 				3D1F818D25A4D7D4000C31E4 /* CrewAuthentication.storyboard in Resources */,
 				79E0BF5A25A3C3E0001C1A4D /* HajjInfoStoryboard.storyboard in Resources */,
 				3DE697F025A46FA4002741BC /* Main.storyboard in Resources */,
+				3D64AC0225AB650D00258141 /* HelveticaNeueLTArabic-Bold.ttf in Resources */,
 				3D31831425A399C90017F64B /* TabBar.storyboard in Resources */,
 				3D1F815825A49F60000C31E4 /* GoogleService-Info.plist in Resources */,
 				797F57F025A7ACBD005DA50F /* ChatStoryboard.storyboard in Resources */,

@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Hajj ID-->
+        <!--Hajj Info View Controller-->
         <scene sceneID="szE-Mo-HXY">
             <objects>
                 <viewController id="yIu-F8-6Vx" customClass="HajjInfoViewController" customModule="FinalProject_HajjApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -625,7 +625,7 @@
                             <constraint firstItem="fVo-yY-ton" firstAttribute="top" secondItem="ZJy-rc-JKk" secondAttribute="top" id="yM4-YQ-So2"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Hajj ID" id="lG4-Wu-JuZ">
+                    <navigationItem key="navigationItem" id="lG4-Wu-JuZ">
                         <barButtonItem key="leftBarButtonItem" image="line.horizontal.3" catalog="system" id="FCO-Cf-VoD">
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
@@ -723,11 +723,10 @@
             </objects>
             <point key="canvasLocation" x="1328.985507246377" y="72.991071428571431"/>
         </scene>
-        <!--Home-->
+        <!--Navigation Controller-->
         <scene sceneID="axN-6q-hUh">
             <objects>
                 <navigationController storyboardIdentifier="home" automaticallyAdjustsScrollViewInsets="NO" id="1Pw-tj-rUc" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Home" image="person.crop.square" catalog="system" id="o7X-Gu-YNU"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="eCL-lA-jv5">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -754,7 +753,6 @@
         <image name="female-avatar" width="512" height="512"/>
         <image name="line.horizontal.3" catalog="system" width="128" height="64"/>
         <image name="location.north.fill" catalog="system" width="108" height="128"/>
-        <image name="person.crop.square" catalog="system" width="128" height="114"/>
         <image name="x.square.fill" catalog="system" width="128" height="114"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

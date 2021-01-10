@@ -58,7 +58,7 @@ class TrackingHajjiesOnMapViewController: UIViewController, MKMapViewDelegate {
                         //Getting current location
                         let location = CLLocationCoordinate2DMake(getCurrentLocation.latitude, getCurrentLocation.longitude)
                         print("hajj's location: \(location)")
-                        let region = MKCoordinateRegion(center: location, latitudinalMeters: 500.0, longitudinalMeters: 700.0)
+                        let region = MKCoordinateRegion(center: location, latitudinalMeters: 5000.0, longitudinalMeters: 5000.0)
                         self.mapView.setRegion(region, animated: true)
                         
                         // Dropping a pin

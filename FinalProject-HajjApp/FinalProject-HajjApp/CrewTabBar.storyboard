@@ -7,6 +7,14 @@
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="HelveticaNeueLTArabic-Bold.ttf">
+            <string>HelveticaNeueLTArabic-Bold</string>
+        </array>
+        <array key="helveticaneuelt-arabic-55-roman.ttf">
+            <string>HelveticaNeueLTArabic-Roman</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--الماسح-->
         <scene sceneID="vI9-XK-VWq">
@@ -22,7 +30,7 @@
                                     <constraint firstAttribute="width" constant="215" id="3wA-wE-EZW"/>
                                     <constraint firstAttribute="height" constant="50" id="esX-NY-Z6d"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeueLTArabic-Bold" family="Helvetica Neue LT Arabic" pointSize="18"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -77,7 +85,7 @@
                                         <rect key="frame" x="14" y="8" width="178" height="40"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="0.95675891639999999" green="0.95692259069999996" blue="0.95674854519999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeueLTArabic-Bold" family="Helvetica Neue LT Arabic" pointSize="16"/>
                                         <color key="textColor" red="0.89795245546283142" green="0.47721546278233923" blue="0.27142097761884948" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                         <userDefinedRuntimeAttributes>
@@ -102,7 +110,7 @@
                                             <constraint firstAttribute="width" constant="210" id="A7j-h5-0cT"/>
                                             <constraint firstAttribute="height" constant="35" id="lQu-UA-p9a"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeueLTArabic-Bold" family="Helvetica Neue LT Arabic" pointSize="16"/>
                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -159,20 +167,20 @@
                                         <rect key="frame" x="23" y="48" width="262.5" height="20.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="العمر" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5cX-ey-UFQ">
-                                                <rect key="frame" x="0.0" y="0.0" width="34" height="20.5"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="32" height="20.5"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeueLTArabic-Roman" family="Helvetica Neue LT Arabic" pointSize="16"/>
                                                 <color key="textColor" red="0.41177058220000001" green="0.41175404189999998" blue="0.41176530719999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="الجنس" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EDU-6L-iKX">
-                                                <rect key="frame" x="104" y="0.0" width="46" height="20.5"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <rect key="frame" x="105.5" y="0.0" width="41.5" height="20.5"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeueLTArabic-Roman" family="Helvetica Neue LT Arabic" pointSize="16"/>
                                                 <color key="textColor" red="0.41177058220000001" green="0.41175404189999998" blue="0.41176530719999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="فصيلة" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XF5-lr-ihX">
-                                                <rect key="frame" x="220" y="0.0" width="42.5" height="20.5"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <rect key="frame" x="220.5" y="0.0" width="42" height="20.5"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeueLTArabic-Roman" family="Helvetica Neue LT Arabic" pointSize="16"/>
                                                 <color key="textColor" red="0.41177058220000001" green="0.41175404189999998" blue="0.41176530719999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -244,7 +252,7 @@
                                             <constraint firstAttribute="height" constant="21" id="V7U-d5-LmQ"/>
                                             <constraint firstAttribute="width" constant="148" id="yZN-ai-yf8"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeueLTArabic-Roman" family="Helvetica Neue LT Arabic" pointSize="18"/>
                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -268,7 +276,7 @@
                                             <constraint firstAttribute="width" constant="123" id="YIV-a6-iVn"/>
                                             <constraint firstAttribute="height" constant="21" id="fex-u5-bDG"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeueLTArabic-Roman" family="Helvetica Neue LT Arabic" pointSize="18"/>
                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -298,15 +306,15 @@
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IG3-Gt-zD2" customClass="DesignableView" customModule="FinalProject_HajjApp" customModuleProvider="target">
-                                <rect key="frame" x="32" y="495" width="350" height="334"/>
+                                <rect key="frame" x="32" y="495.5" width="350" height="333"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ebF-Tj-toN" customClass="DesignableView" customModule="FinalProject_HajjApp" customModuleProvider="target">
-                                        <rect key="frame" x="220" y="21" width="110" height="41"/>
+                                        <rect key="frame" x="215" y="7.5" width="110" height="41"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="الحملة" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9oZ-z3-fDM">
                                                 <rect key="frame" x="8" y="10" width="94" height="21"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeueLTArabic-Bold" family="Helvetica Neue LT Arabic" pointSize="16"/>
                                                 <color key="textColor" red="0.26671963929999998" green="0.3892681301" blue="0.3526313901" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -323,7 +331,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </view>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Pp2-Og-Lxd">
-                                        <rect key="frame" x="35" y="66" width="320" height="50"/>
+                                        <rect key="frame" x="30" y="53.5" width="320" height="50"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GJJ-ap-kbf">
                                                 <rect key="frame" x="0.0" y="0.0" width="106" height="50"/>
@@ -333,7 +341,7 @@
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="34" id="fLS-tY-1gK"/>
                                                         </constraints>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <fontDescription key="fontDescription" name="HelveticaNeueLTArabic-Roman" family="Helvetica Neue LT Arabic" pointSize="18"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
@@ -355,7 +363,7 @@
                                                             <constraint firstAttribute="height" constant="32" id="2Ox-oS-23h"/>
                                                             <constraint firstAttribute="width" constant="149" id="991-qW-uLA"/>
                                                         </constraints>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <fontDescription key="fontDescription" name="HelveticaNeueLTArabic-Roman" family="Helvetica Neue LT Arabic" pointSize="18"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
@@ -396,12 +404,12 @@
                                         </constraints>
                                     </stackView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OIB-6g-mFj" customClass="DesignableView" customModule="FinalProject_HajjApp" customModuleProvider="target">
-                                        <rect key="frame" x="178" y="130" width="154" height="44"/>
+                                        <rect key="frame" x="173" y="118.5" width="154" height="44"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="معلومات إضافية" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cte-ac-u9G">
                                                 <rect key="frame" x="8" y="11" width="138" height="21"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeueLTArabic-Bold" family="Helvetica Neue LT Arabic" pointSize="17"/>
                                                 <color key="textColor" red="0.26671963929999998" green="0.3892681301" blue="0.3526313901" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -418,7 +426,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </view>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="V0n-Br-cH9">
-                                        <rect key="frame" x="10" y="295" width="320" height="50"/>
+                                        <rect key="frame" x="6" y="282.5" width="320" height="50"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bgn-sy-K1N">
                                                 <rect key="frame" x="0.0" y="0.0" width="114" height="50"/>
@@ -428,7 +436,7 @@
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="23" id="B5I-Xr-cJK"/>
                                                         </constraints>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <fontDescription key="fontDescription" name="HelveticaNeueLTArabic-Roman" family="Helvetica Neue LT Arabic" pointSize="17"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
@@ -450,7 +458,7 @@
                                                             <constraint firstAttribute="height" constant="21" id="JGD-eb-NhD"/>
                                                             <constraint firstAttribute="width" constant="200" id="p4l-KZ-1Pr"/>
                                                         </constraints>
-                                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                                                        <fontDescription key="fontDescription" name="HelveticaNeueLTArabic-Roman" family="Helvetica Neue LT Arabic" pointSize="17"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
@@ -470,12 +478,12 @@
                                         </constraints>
                                     </stackView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7vN-bS-ksa" customClass="DesignableView" customModule="FinalProject_HajjApp" customModuleProvider="target">
-                                        <rect key="frame" x="178" y="238" width="154" height="44"/>
+                                        <rect key="frame" x="173" y="226.5" width="154" height="44"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="الحالة الصحيّة" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jEk-M0-pYu">
                                                 <rect key="frame" x="15" y="11" width="119" height="21"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeueLTArabic-Bold" family="Helvetica Neue LT Arabic" pointSize="17"/>
                                                 <color key="textColor" red="0.26671963929999998" green="0.3892681301" blue="0.3526313901" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -492,7 +500,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </view>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="w0j-BR-vHS">
-                                        <rect key="frame" x="2" y="182" width="326" height="50"/>
+                                        <rect key="frame" x="-1" y="169.5" width="326" height="50"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TaZ-Wx-ZeV">
                                                 <rect key="frame" x="0.0" y="0.0" width="200" height="50"/>
@@ -503,7 +511,7 @@
                                                             <constraint firstAttribute="width" constant="200" id="Hcl-w4-Lek"/>
                                                             <constraint firstAttribute="height" constant="23" id="l10-o7-hdP"/>
                                                         </constraints>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <fontDescription key="fontDescription" name="HelveticaNeueLTArabic-Roman" family="Helvetica Neue LT Arabic" pointSize="17"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
@@ -525,7 +533,7 @@
                                                             <constraint firstAttribute="width" constant="120" id="hii-cq-22q"/>
                                                             <constraint firstAttribute="height" constant="21" id="jOC-GB-3S0"/>
                                                         </constraints>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <fontDescription key="fontDescription" name="HelveticaNeueLTArabic-Roman" family="Helvetica Neue LT Arabic" pointSize="17"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
@@ -546,20 +554,20 @@
                                 </subviews>
                                 <color key="backgroundColor" red="0.47545772790000002" green="0.64779168369999995" blue="0.59607464080000006" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
-                                    <constraint firstItem="7vN-bS-ksa" firstAttribute="centerY" secondItem="IG3-Gt-zD2" secondAttribute="centerY" constant="93" id="3wQ-8C-fGt"/>
-                                    <constraint firstItem="w0j-BR-vHS" firstAttribute="centerY" secondItem="IG3-Gt-zD2" secondAttribute="centerY" constant="40" id="6a0-Hp-gHi"/>
-                                    <constraint firstItem="OIB-6g-mFj" firstAttribute="centerX" secondItem="IG3-Gt-zD2" secondAttribute="centerX" constant="80" id="85Q-dR-xgh"/>
-                                    <constraint firstItem="V0n-Br-cH9" firstAttribute="centerX" secondItem="IG3-Gt-zD2" secondAttribute="centerX" constant="-5" id="9oP-uD-DMG"/>
-                                    <constraint firstItem="w0j-BR-vHS" firstAttribute="centerX" secondItem="IG3-Gt-zD2" secondAttribute="centerX" constant="-10" id="N3G-DM-tyF"/>
-                                    <constraint firstItem="OIB-6g-mFj" firstAttribute="centerY" secondItem="IG3-Gt-zD2" secondAttribute="centerY" constant="-15" id="PrP-8k-oaP"/>
-                                    <constraint firstItem="Pp2-Og-Lxd" firstAttribute="centerX" secondItem="IG3-Gt-zD2" secondAttribute="centerX" constant="20" id="Rs5-nf-mif"/>
-                                    <constraint firstItem="ebF-Tj-toN" firstAttribute="centerY" secondItem="IG3-Gt-zD2" secondAttribute="centerY" constant="-125.5" id="WWc-tJ-tfQ"/>
-                                    <constraint firstItem="V0n-Br-cH9" firstAttribute="centerY" secondItem="IG3-Gt-zD2" secondAttribute="centerY" constant="153" id="buV-Kb-riT"/>
+                                    <constraint firstItem="7vN-bS-ksa" firstAttribute="centerY" secondItem="IG3-Gt-zD2" secondAttribute="centerY" constant="82" id="3wQ-8C-fGt"/>
+                                    <constraint firstItem="w0j-BR-vHS" firstAttribute="centerY" secondItem="IG3-Gt-zD2" secondAttribute="centerY" constant="28" id="6a0-Hp-gHi"/>
+                                    <constraint firstItem="OIB-6g-mFj" firstAttribute="centerX" secondItem="IG3-Gt-zD2" secondAttribute="centerX" constant="75" id="85Q-dR-xgh"/>
+                                    <constraint firstItem="V0n-Br-cH9" firstAttribute="centerX" secondItem="IG3-Gt-zD2" secondAttribute="centerX" constant="-9" id="9oP-uD-DMG"/>
+                                    <constraint firstItem="w0j-BR-vHS" firstAttribute="centerX" secondItem="IG3-Gt-zD2" secondAttribute="centerX" constant="-13" id="N3G-DM-tyF"/>
+                                    <constraint firstItem="OIB-6g-mFj" firstAttribute="centerY" secondItem="IG3-Gt-zD2" secondAttribute="centerY" constant="-26" id="PrP-8k-oaP"/>
+                                    <constraint firstItem="Pp2-Og-Lxd" firstAttribute="centerX" secondItem="IG3-Gt-zD2" secondAttribute="centerX" constant="15" id="Rs5-nf-mif"/>
+                                    <constraint firstItem="ebF-Tj-toN" firstAttribute="centerY" secondItem="IG3-Gt-zD2" secondAttribute="centerY" constant="-138.5" id="WWc-tJ-tfQ"/>
+                                    <constraint firstItem="V0n-Br-cH9" firstAttribute="centerY" secondItem="IG3-Gt-zD2" secondAttribute="centerY" constant="141" id="buV-Kb-riT"/>
                                     <constraint firstAttribute="width" constant="350" id="cCp-yz-6Ve"/>
-                                    <constraint firstItem="Pp2-Og-Lxd" firstAttribute="centerY" secondItem="IG3-Gt-zD2" secondAttribute="centerY" constant="-76" id="diU-sB-rcg"/>
-                                    <constraint firstItem="ebF-Tj-toN" firstAttribute="centerX" secondItem="IG3-Gt-zD2" secondAttribute="centerX" constant="100" id="dkp-gW-Dz2"/>
-                                    <constraint firstItem="7vN-bS-ksa" firstAttribute="centerX" secondItem="IG3-Gt-zD2" secondAttribute="centerX" constant="80" id="v50-kA-rKb"/>
-                                    <constraint firstAttribute="height" constant="334" id="vFM-2v-k8O"/>
+                                    <constraint firstItem="Pp2-Og-Lxd" firstAttribute="centerY" secondItem="IG3-Gt-zD2" secondAttribute="centerY" constant="-88" id="diU-sB-rcg"/>
+                                    <constraint firstItem="ebF-Tj-toN" firstAttribute="centerX" secondItem="IG3-Gt-zD2" secondAttribute="centerX" constant="95" id="dkp-gW-Dz2"/>
+                                    <constraint firstItem="7vN-bS-ksa" firstAttribute="centerX" secondItem="IG3-Gt-zD2" secondAttribute="centerX" constant="75" id="v50-kA-rKb"/>
+                                    <constraint firstAttribute="height" constant="333" id="vFM-2v-k8O"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -669,7 +677,7 @@
     </scenes>
     <designables>
         <designable name="2y0-fD-AVC">
-            <size key="intrinsicContentSize" width="90.5" height="20.5"/>
+            <size key="intrinsicContentSize" width="79" height="30"/>
         </designable>
     </designables>
     <resources>
